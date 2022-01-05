@@ -45,10 +45,12 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header>
+<header class=page-header><div class=breadcrumbs><a href=https://litsynp.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://litsynp.github.io/tags/>Tags</a></div>
 <h1>Django REST Framework</h1>
 </header>
 <article class="post-entry tag-entry">
+<figure class=entry-cover><img loading=lazy src=https://www.django-rest-framework.org/img/logo.png alt="Django REST Framework logo">
+</figure>
 <header class=entry-header>
 <h2>[Python] super() 이용해서 기존 메소드 이용하기
 </h2>
@@ -59,7 +61,7 @@
 예시는 다음과 같다.
 # ViewSet 안의 메소드 def destroy(self, request, *args, **kwargs): user_id = int(self.kwargs.get('pk')) # 로그인한 사용자와 조회하려는 사용자의 ID가 일치한지 확인 if self.request.user.id == user_id: return super(UserViewSet, self).destroy(request, *args, **kwargs) else: response = { 'detail': 'Delete function is not offered without authorization as the owner....</p>
 </section>
-<footer class=entry-footer><span title="2021-02-10 00:00:00 +0900 +0900">February 10, 2021</span></footer>
+<footer class=entry-footer><span title="2021-02-10 00:00:00 +0900 +0900">February 10, 2021</span>&nbsp;·&nbsp;1 min</footer>
 <a class=entry-link aria-label="post link to [Python] super() 이용해서 기존 메소드 이용하기" href=https://litsynp.github.io/posts/2021-02-10/></a>
 </article>
 </main>

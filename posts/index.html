@@ -46,10 +46,12 @@
 </nav>
 </header>
 <main class=main>
-<header class=page-header>
+<header class=page-header><div class=breadcrumbs><a href=https://litsynp.github.io/>Home</a></div>
 <h1>Posts</h1>
 </header>
 <article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://www.scottbrady91.com/img/logos/swagger-banner.png alt="Swagger logo">
+</figure>
 <header class=entry-header>
 <h2>Spring Boot에서 Swagger UI 접속이 안되는 경우
 </h2>
@@ -61,10 +63,12 @@
 implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0' implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0' 다음과 같이 바꾼다.
 implementation "io.springfox:springfox-boot-starter:3.0.0" 다시 빌드하고 /swagger-ui endpoint로 접속해보면 성공!👍</p>
 </section>
-<footer class=entry-footer><span title="2021-09-05 01:00:00 +0900 +0900">September 5, 2021</span></footer>
+<footer class=entry-footer><span title="2021-09-05 01:00:00 +0900 +0900">September 5, 2021</span>&nbsp;·&nbsp;1 min</footer>
 <a class=entry-link aria-label="post link to Spring Boot에서 Swagger UI 접속이 안되는 경우" href=https://litsynp.github.io/posts/2021-09-05_2/></a>
 </article>
 <article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png alt="Spring logo">
+</figure>
 <header class=entry-header>
 <h2>Getting Ambiguous @ExceptionHandler method mapped for XXXException
 </h2>
@@ -76,10 +80,12 @@ Getting Ambiguous @ExceptionHandler method mapped for XXXException 라는 오류
 해결법 @ExceptionHandler 어노테이션을 사용하는 대신, @Override 어노테이션을 이용해 해당 핸들러를 직접 오버라이드한다. (REF 참고)
 REF [Stack Overflow] (https://stackoverflow.com/questions/51991992/getting-ambiguous-exceptionhandler-method-mapped-for-methodargumentnotvalidexce)</p>
 </section>
-<footer class=entry-footer><span title="2021-09-05 00:00:00 +0900 +0900">September 5, 2021</span></footer>
+<footer class=entry-footer><span title="2021-09-05 00:00:00 +0900 +0900">September 5, 2021</span>&nbsp;·&nbsp;1 min</footer>
 <a class=entry-link aria-label="post link to Getting Ambiguous @ExceptionHandler method mapped for XXXException" href=https://litsynp.github.io/posts/2021-09-05/></a>
 </article>
 <article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://www.django-rest-framework.org/img/logo.png alt="Django REST Framework logo">
+</figure>
 <header class=entry-header>
 <h2>[Python] super() 이용해서 기존 메소드 이용하기
 </h2>
@@ -90,8 +96,41 @@ REF [Stack Overflow] (https://stackoverflow.com/questions/51991992/getting-ambig
 예시는 다음과 같다.
 # ViewSet 안의 메소드 def destroy(self, request, *args, **kwargs): user_id = int(self.kwargs.get('pk')) # 로그인한 사용자와 조회하려는 사용자의 ID가 일치한지 확인 if self.request.user.id == user_id: return super(UserViewSet, self).destroy(request, *args, **kwargs) else: response = { 'detail': 'Delete function is not offered without authorization as the owner....</p>
 </section>
-<footer class=entry-footer><span title="2021-02-10 00:00:00 +0900 +0900">February 10, 2021</span></footer>
+<footer class=entry-footer><span title="2021-02-10 00:00:00 +0900 +0900">February 10, 2021</span>&nbsp;·&nbsp;1 min</footer>
 <a class=entry-link aria-label="post link to [Python] super() 이용해서 기존 메소드 이용하기" href=https://litsynp.github.io/posts/2021-02-10/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>
+</h2>
+</header>
+<section class=entry-content>
+<p></p>
+</section>
+<footer class=entry-footer>0 min</footer>
+<a class=entry-link aria-label="post link to " href=https://litsynp.github.io/posts/comments/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>archives
+</h2>
+</header>
+<section class=entry-content>
+<p>archives of all my contents.</p>
+</section>
+<footer class=entry-footer></footer>
+<a class=entry-link aria-label="post link to archives" href=https://litsynp.github.io/archives/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>search
+</h2>
+</header>
+<section class=entry-content>
+<p>search contents from litsynp.</p>
+</section>
+<footer class=entry-footer></footer>
+<a class=entry-link aria-label="post link to search" href=https://litsynp.github.io/posts/search/></a>
 </article>
 </main>
 <footer class=footer>
