@@ -2,3 +2,39 @@ baseURL: https://litsynp.github.io/
 languageCode: ko-kr
 title: litsynp
 theme: PaperMod
+
+## PaperMod ##
+# disableThemeToggle: true
+params:
+  homeInfoParams:
+    Title: litsynp.log
+    Content: Logged by a backend developer
+  # socialIcons: # optional
+  #   name: "<platform>"
+  #     url: "<link>"
+  #   name: "<platform 2>"
+  #     url: "<link2>"
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+
+  # BreadCrumb Navigation
+  ShowBreadCrumbs: true
+
+  # Table of contents
+  ShowToc: true
+  TocOpen: true
+
+  # Suggest changes
+  editPost:
+    URL: "https://github.com/litsynp/litsynp.github.io/blob/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
