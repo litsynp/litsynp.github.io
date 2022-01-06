@@ -4,6 +4,8 @@ theme: PaperMod
 
 ## PaperMod ##
 # disableThemeToggle: true
+paginate: 20
+
 languages:
   en:
     languageName: "English"
