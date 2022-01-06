@@ -1,10 +1,31 @@
 baseURL: https://litsynp.github.io/
-languageCode: ko-kr
 title: litsynp
 theme: PaperMod
 
 ## PaperMod ##
 # disableThemeToggle: true
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: archives
+          url: archives
+          weight: 5
+        - name: search
+          url: search/
+          weight: 10
+        - name: tags
+          url: tags/
+          weight: 10
+        - name: categories
+          url: categories/
+          weight: 10
+        - name: series
+          url: series/
+          weight: 10
+
 params:
   homeInfoParams:
     Title: litsynp.log
@@ -33,6 +54,11 @@ params:
     URL: "https://github.com/litsynp/litsynp.github.io/blob/main/content"
     Text: "Suggest Changes"
     appendFilePath: true
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
 
 outputs:
   home:
