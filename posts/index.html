@@ -50,6 +50,21 @@
 <h1>Posts</h1>
 </header>
 <article class=post-entry>
+<figure class=entry-cover><img loading=lazy src=https://user-images.githubusercontent.com/42485462/148346764-0e23e2c9-6acc-4c17-9b93-b11ca28db148.png alt="Code snippet">
+</figure>
+<header class=entry-header>
+<h2>[DRF] Serializer에 writable non-model field 추가하기
+</h2>
+</header>
+<section class=entry-content>
+<p>문제 Django 및 DRF에서 model에 정의하지 않은 필드를 POST / PUT용 serializer에 추가하고 싶을 때가 있다. 그냥 serializers.CharField()로 추가하면 unexpected keyword라고 뜨면서 추가할 수 없는 문제가 발생한다.
+해결법 Serializer에 추가해둔 필드를 validate 메소드에서 model 생성에 사용되지 않도록 pop() 시켜준다.
+class UserSerializer(serializers.ModelSerializer): non_model_field = serializers.CharField(max_length=300, allow_blank=True, write_only=True) class Meta: model = User fields = ('id', 'username', 'password', 'non_model_field') def validate(self, attrs): # ... attrs.pop('non_model_field', None) return super().validate(attrs) REF Stack Overflow</p>
+</section>
+<footer class=entry-footer><span title="2022-01-05 23:31:28 -0800 -0800">January 5, 2022</span>&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to [DRF] Serializer에 writable non-model field 추가하기" href=https://litsynp.github.io/posts/2022-01-05/></a>
+</article>
+<article class=post-entry>
 <figure class=entry-cover><img loading=lazy src=https://www.scottbrady91.com/img/logos/swagger-banner.png alt="Swagger logo">
 </figure>
 <header class=entry-header>
@@ -98,17 +113,6 @@ REF [Stack Overflow] (https://stackoverflow.com/questions/51991992/getting-ambig
 </section>
 <footer class=entry-footer><span title="2021-02-10 00:00:00 +0900 +0900">February 10, 2021</span>&nbsp;·&nbsp;1 min</footer>
 <a class=entry-link aria-label="post link to [Python] super() 이용해서 기존 메소드 이용하기" href=https://litsynp.github.io/posts/2021-02-10/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>
-</h2>
-</header>
-<section class=entry-content>
-<p></p>
-</section>
-<footer class=entry-footer>0 min</footer>
-<a class=entry-link aria-label="post link to " href=https://litsynp.github.io/posts/comments/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
