@@ -1,5 +1,5 @@
 baseURL: https://litsynp.github.io/
-title: litsynp
+title: litsynp.log
 theme: PaperMod
 
 ## PaperMod ##
@@ -27,9 +27,11 @@ languages:
           weight: 10
 
 params:
+  author: litsynp
+  description: Logs by a backend developer
   homeInfoParams:
     Title: litsynp.log
-    Content: Logged by a backend developer
+    Content: Logs by a backend developer
 
   socialIcons:
     - name: "github"
