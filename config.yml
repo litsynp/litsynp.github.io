@@ -45,6 +45,7 @@ params:
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
+  comments: true
 
   # BreadCrumb Navigation
   ShowBreadCrumbs: true
