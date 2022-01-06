@@ -9,11 +9,12 @@ params:
   homeInfoParams:
     Title: litsynp.log
     Content: Logged by a backend developer
-  # socialIcons: # optional
-  #   name: "<platform>"
-  #     url: "<link>"
-  #   name: "<platform 2>"
-  #     url: "<link2>"
+
+  socialIcons:
+    - name: "github"
+      url: "https://www.github.com/litsynp"
+    - name: "email"
+      url: "mailto:nocte55is@gmail.com"
 
   ShowReadingTime: true
   ShowShareButtons: true
