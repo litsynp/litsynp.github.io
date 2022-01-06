@@ -30,10 +30,10 @@ languages:
 
 params:
   author: litsynp
-  description: Logs by a backend developer
+  description: Logs from a backend developer
   homeInfoParams:
     Title: litsynp.log
-    Content: Logs by a backend developer
+    Content: Logs from a backend developer
 
   socialIcons:
     - name: "github"
