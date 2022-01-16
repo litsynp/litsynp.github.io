@@ -2,6 +2,8 @@ baseURL: https://litsynp.github.io/
 title: litsynp.log
 theme: PaperMod
 
+googleAnalytics: G-GW9KZWEGL8
+
 ## PaperMod ##
 # disableThemeToggle: true
 paginate: 20
