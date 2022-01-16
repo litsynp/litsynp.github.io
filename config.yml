@@ -31,6 +31,7 @@ languages:
 params:
   author: litsynp
   description: Logs from a backend developer
+  env: production
   homeInfoParams:
     Title: litsynp.log
     Content: Logs from a backend developer
