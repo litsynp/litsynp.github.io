@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://litsynp.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.91.2">
+<meta name=generator content="Hugo 0.92.0">
 <link rel=alternate type=application/rss+xml href=https://litsynp.github.io/categories/problem-solved/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -29,6 +29,8 @@
 <meta property="og:title" content="litsynp.log">
 <meta property="og:description" content="Blog about problem solving and development">
 <meta name=description content="Blog about problem solving and development">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GW9KZWEGL8"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-GW9KZWEGL8',{anonymize_ip:!1})}</script>
 <meta property="og:title" content="problem-solved">
 <meta property="og:description" content="Logs from a backend developer">
 <meta property="og:type" content="website">
@@ -110,7 +112,7 @@ implementation "io.springfox:springfox-boot-starter:3.0.0" 다시 빌드하고 /
 Getting Ambiguous @ExceptionHandler method mapped for XXXException 라는 오류가 뜨는 경우가 있다.
 원인 스프링의 @ExceptionHandler에 이미 MethodArgumentNotValidException이 이미 구현이 되어있기 때문에 동일한 두 개의 핸들러가 존재하게 되기 때문에 발생한다.
 해결법 @ExceptionHandler 어노테이션을 사용하는 대신, @Override 어노테이션을 이용해 해당 핸들러를 직접 오버라이드한다. (REF 참고)
-REF [Stack Overflow] (https://stackoverflow.com/questions/51991992/getting-ambiguous-exceptionhandler-method-mapped-for-methodargumentnotvalidexce)</p>
+REF Stack Overflow</p>
 </section>
 <footer class=entry-footer><span title="2021-09-05 00:00:00 +0900 +0900">September 5, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;litsynp</footer>
 <a class=entry-link aria-label="post link to Getting Ambiguous @ExceptionHandler method mapped for XXXException" href=https://litsynp.github.io/posts/2021-09-05/></a>
