@@ -4,6 +4,15 @@ theme: PaperMod
 
 googleAnalytics: G-GW9KZWEGL8
 
+# robots.txt
+enableRobotsTXT: true
+
+# sitemap.xml
+sitemap:
+  changefreq: "weekly"
+  filename: "sitemap.xml"
+  priority: 0.5
+
 ## PaperMod ##
 # disableThemeToggle: true
 paginate: 20
