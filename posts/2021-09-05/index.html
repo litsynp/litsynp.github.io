@@ -11,8 +11,8 @@ REF  Stack Overflow"><meta name=description content="문제  스프링에서 @Co
 Getting Ambiguous @ExceptionHandler method mapped for XXXException 라는 오류가 뜨는 경우가 있다.
 원인  스프링의 @ExceptionHandler에 이미 MethodArgumentNotValidException이 이미 구현이 되어있기 때문에 동일한 두 개의 핸들러가 존재하게 되기 때문에 발생한다.
 해결법  @ExceptionHandler 어노테이션을 사용하는 대신, @Override 어노테이션을 이용해 해당 핸들러를 직접 오버라이드한다. (REF 참고)
-REF  Stack Overflow"><meta property="article:author" content="litsynp"><meta property="article:published_time" content="2021-09-05 00:00:00 +0900 +0900"><script async src="https://www.googletagmanager.com/gtag/js?id=G-GW9KZWEGL8"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-GW9KZWEGL8",{anonymize_ip:!1})}</script><meta property="og:title" content="Getting Ambiguous @ExceptionHandler method mapped for XXXException"><meta property="og:description" content="문제  스프링에서 @ControllerAdvice를 이용해 전역 exception handler를 직접 만들 때, @ExceptionHandler(XXXException.class)를 어노테이션으로 메소드에 달았을 때,
+REF  Stack Overflow"><meta property="article:author" content="litsynp"><meta property="article:published_time" content="2021-09-05 00:00:00 +0900 +0900"><script async src="https://www.googletagmanager.com/gtag/js?id=G-KNPB15W2HP"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-KNPB15W2HP",{anonymize_ip:!1})}</script><meta property="og:title" content="Getting Ambiguous @ExceptionHandler method mapped for XXXException"><meta property="og:description" content="문제  스프링에서 @ControllerAdvice를 이용해 전역 exception handler를 직접 만들 때, @ExceptionHandler(XXXException.class)를 어노테이션으로 메소드에 달았을 때,
 Getting Ambiguous @ExceptionHandler method mapped for XXXException 라는 오류가 뜨는 경우가 있다.
 원인  스프링의 @ExceptionHandler에 이미 MethodArgumentNotValidException이 이미 구현이 되어있기 때문에 동일한 두 개의 핸들러가 존재하게 되기 때문에 발생한다.
 해결법  @ExceptionHandler 어노테이션을 사용하는 대신, @Override 어노테이션을 이용해 해당 핸들러를 직접 오버라이드한다. (REF 참고)
