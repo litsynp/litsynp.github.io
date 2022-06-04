@@ -5,9 +5,9 @@ draft: false
 categories: ["Spring"]
 tags: ["Spring"]
 cover:
-  image: "https://user-images.githubusercontent.com/42485462/150630882-6a9a3648-b603-48c7-befc-4be6f66a84e7.png"
-  alt: "web.xml"
-  caption: "web.xml"
+  image: "https://user-images.githubusercontent.com/42485462/172010873-abdf31d4-a91c-4109-943e-5bc04378b5f0.png"
+  alt: "External API Call"
+  caption: "External API Call"
   relative: false
 ---
 
