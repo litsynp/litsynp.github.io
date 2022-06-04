@@ -33,7 +33,7 @@ LRU 캐시가 무엇인지 친절하게 해설에서 설명을 해줬다. 가장
 
 ## 참고
 
-[LinkedHashMap ordering](https://stackoverflow.com/questions/35838739/linkedhashmap-ordering)
+[StackOverflow - LinkedHashMap ordering](https://stackoverflow.com/questions/35838739/linkedhashmap-ordering)
 
 [StackOverflow - why is loadFactor in HashMap is set to 0.75 by default? [duplicate]](https://stackoverflow.com/questions/61341274/why-is-loadfactor-in-hashmap-is-set-to-0-75-by-default)
 
