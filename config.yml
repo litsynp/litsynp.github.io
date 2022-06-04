@@ -23,29 +23,45 @@ languages:
     weight: 1
     menu:
       main:
+        - name: posts
+          url: posts
+          weight: 1
+        - name: search
+          url: search
+          weight: 2
         - name: archives
           url: archives
-          weight: 5
-        - name: search
-          url: search/
-          weight: 10
+          weight: 3
         - name: tags
-          url: tags/
-          weight: 10
+          url: tags
+          weight: 4
         - name: categories
-          url: categories/
-          weight: 10
+          url: categories
+          weight: 5
         - name: series
-          url: series/
-          weight: 10
+          url: series
+          weight: 6
 
 params:
   author: litsynp
-  description: Logs from a backend developer
-  env: production
+  description: Memory with a story is more memorable
   homeInfoParams:
     Title: litsynp.log
-    Content: Logs from a backend developer
+    Content: Memory with a story is more memorable
+
+  profileMode:
+    enabled: true
+    title: "litsynp.log"
+    subtitle: "Memory with a story is more memorable"
+    imageUrl: "https://avatars.githubusercontent.com/u/42485462?v=4" # optional
+    imageTitle: "litsynp profile" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: posts
+        url: /posts
+      - name: archives
+        url: /archives
 
   socialIcons:
     - name: "github"
