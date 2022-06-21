@@ -5,11 +5,7 @@ draft: false
 categories: ["today-i-read"]
 tags: ["code"]
 series: ["독서 - 클린 코더"]
-cover:
-  image: "https://user-images.githubusercontent.com/42485462/170722855-8496b4ec-2817-4e33-b73b-d7fe2cbc8a78.png"
-  alt: "Book - The Clean Coder"
-  caption: "The Clean Coder"
-  relative: false
+featuredImage: "https://user-images.githubusercontent.com/42485462/170722855-8496b4ec-2817-4e33-b73b-d7fe2cbc8a78.png"
 ---
 
 # 클린 코더 (The Clean Coder) 독서 - 1

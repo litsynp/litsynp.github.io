@@ -5,11 +5,7 @@ draft: false
 categories: ["tips"]
 tags: ["Django REST Framework", "python"]
 series: ["Django REST Framework 팁"]
-cover:
-  image: "https://www.django-rest-framework.org/img/logo.png"
-  alt: "Django REST Framework logo"
-  caption: "Django REST Framework logo"
-  relative: false
+featuredImage: "https://www.django-rest-framework.org/img/logo.png"
 ---
 
 ## Why use it?

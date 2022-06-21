@@ -5,11 +5,7 @@ draft: false
 categories: ["tips"]
 tags: ["Django REST Framework"]
 series: ["Django REST Framework 팁"]
-cover:
-  image: "https://user-images.githubusercontent.com/42485462/148346764-0e23e2c9-6acc-4c17-9b93-b11ca28db148.png"
-  alt: "Code snippet"
-  caption: "DRF Serializer에 writable non-model field 추가"
-  relative: false
+featuredImage: "https://user-images.githubusercontent.com/42485462/148346764-0e23e2c9-6acc-4c17-9b93-b11ca28db148.png"
 ---
 
 ## 문제

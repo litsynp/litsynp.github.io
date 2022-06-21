@@ -1,0 +1,101 @@
+baseURL: https://blog.litsynp.com/
+title: litsynp.log
+theme: hugo-coder
+
+googleAnalytics: G-KNPB15W2HP
+
+# robots.txt
+enableRobotsTXT: true
+
+# sitemap.xml
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+## PaperMod ##
+# disableThemeToggle: true
+paginate: 20
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: posts
+          url: posts
+          weight: 1
+        - name: search
+          url: search
+          weight: 2
+        - name: archives
+          url: archives
+          weight: 3
+        - name: tags
+          url: tags
+          weight: 4
+        - name: categories
+          url: categories
+          weight: 5
+        - name: series
+          url: series
+          weight: 6
+
+params:
+  author: litsynp
+  description: Memory with a story is more memorable
+  # env: production
+  homeInfoParams:
+    Title: litsynp.log
+    Content: Memory with a story is more memorable
+
+  profileMode:
+    enabled: true
+    title: "litsynp.log"
+    subtitle: "Memory with a story is more memorable"
+    imageUrl: "https://avatars.githubusercontent.com/u/42485462?v=4" # optional
+    imageTitle: "litsynp profile" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: posts
+        url: /posts
+      - name: archives
+        url: /archives
+
+  socialIcons:
+    - name: "github"
+      url: "https://www.github.com/litsynp"
+    - name: "email"
+      url: "mailto:nocte55is@gmail.com"
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  comments: true
+
+  # BreadCrumb Navigation
+  ShowBreadCrumbs: true
+
+  # Table of contents
+  ShowToc: true
+  TocOpen: true
+
+  # Suggest changes
+  editPost:
+    URL: "https://github.com/litsynp/litsynp.github.io/blob/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON

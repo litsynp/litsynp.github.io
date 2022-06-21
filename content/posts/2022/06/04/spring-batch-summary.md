@@ -5,11 +5,7 @@ draft: false
 categories: ["Spring Batch"]
 tags: ["Spring", "Spring Batch"]
 series: ["Spring 알아보기"]
-cover:
-  image: "https://user-images.githubusercontent.com/42485462/172010391-6e903327-fcce-4eb8-8610-5ddc51767735.png"
-  alt: "Spring Batch"
-  caption: "Spring Batch"
-  relative: false
+featuredImage: "https://user-images.githubusercontent.com/42485462/172010391-6e903327-fcce-4eb8-8610-5ddc51767735.png"
 ---
 
 # 배치 개발 시나리오

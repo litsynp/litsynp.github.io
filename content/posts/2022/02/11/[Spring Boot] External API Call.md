@@ -4,11 +4,7 @@ date: 2022-02-11T23:30:25-08:00
 draft: false
 categories: ["Spring"]
 tags: ["Spring"]
-cover:
-  image: "https://user-images.githubusercontent.com/42485462/172010873-abdf31d4-a91c-4109-943e-5bc04378b5f0.png"
-  alt: "External API Call"
-  caption: "External API Call"
-  relative: false
+featuredImage: "https://user-images.githubusercontent.com/42485462/172010873-abdf31d4-a91c-4109-943e-5bc04378b5f0.png"
 ---
 
 `RestTemplate` is commonly used for external API call in Spring.

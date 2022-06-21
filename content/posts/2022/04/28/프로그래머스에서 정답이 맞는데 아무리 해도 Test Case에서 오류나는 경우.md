@@ -5,11 +5,7 @@ draft: false
 categories: ["problem-solved"]
 tags: ["ps"]
 series: ["코딩테스트"]
-cover:
-  image: "https://file.newswire.co.kr/data/datafile2/thumb_640/2021/06/1993996598_20210610150326_5364622170.jpg"
-  alt: "Programmers logo"
-  caption: "Programmers"
-  relative: false
+featuredImage: "https://file.newswire.co.kr/data/datafile2/thumb_640/2021/06/1993996598_20210610150326_5364622170.jpg"
 ---
 
 # 프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우

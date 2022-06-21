@@ -5,11 +5,7 @@ draft: false
 categories: ["problem-solved"]
 tags: ["ps"]
 series: ["코딩테스트"]
-cover:
-  image: "https://wallpapercave.com/wp/wp7250034.jpg"
-  alt: "Java logo"
-  caption: "Java"
-  relative: false
+featuredImage: "https://wallpapercave.com/wp/wp7250034.jpg"
 ---
 
 # Java - `List<Integer>`에서 `remove()`를 이용한 원소 삭제 간 주의점

@@ -5,10 +5,7 @@ draft: false
 categories: ["problem-solved"]
 tags: ["Spring", "Spring Boot", "Swagger"]
 series: ["Spring 알아보기"]
-cover:
-  image: "https://www.scottbrady91.com/img/logos/swagger-banner.png"
-  alt: "Swagger logo"
-  relative: false
+featuredImage: "https://www.scottbrady91.com/img/logos/swagger-banner.png"
 ---
 
 ## 문제

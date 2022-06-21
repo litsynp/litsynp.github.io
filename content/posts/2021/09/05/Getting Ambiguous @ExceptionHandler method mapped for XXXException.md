@@ -5,10 +5,7 @@ draft: false
 categories: ["problem-solved"]
 tags: ["Spring"]
 series: ["Spring 알아보기"]
-cover:
-  image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png"
-  alt: "Spring logo"
-  relative: false
+featuredImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png"
 ---
 
 ## 문제
