@@ -64,10 +64,18 @@ params:
       icon: "fa fa-github fa-2x"
       weight: 1
       url: "https://www.github.com/litsynp"
+    - name: "gitbook"
+      icon: "fa fa-book fa-2x"
+      weight: 2
+      url: "https://docs.litsynp.com"
     - name: "email"
       icon: "fa fa-envelope-square fa-2x"
       weight: 2
       url: "mailto:nocte55is@gmail.com"
+    - name: "articles"
+      icon: "fa fa-pencil-square fa-2x"
+      weight: 2
+      url: "https://blog.litsynp.com/posts"
 
 taxonomies:
   category: categories
