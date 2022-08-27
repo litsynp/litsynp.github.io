@@ -7,7 +7,7 @@ paginate: 20
 
 googleAnalytics: G-KNPB15W2HP
 
-disqusShortname: litsynp-github-io
+# disqusShortname: litsynp-github-io
 
 # robots.txt
 enableRobotsTXT: true
@@ -52,6 +52,12 @@ params:
 
   favicon_32: "favicon.ico"
   favicon_16: "favicon.ico"
+
+  utterances:
+    repo: litsynp/litsynp.github.io
+    issueTerm: pathname
+    label: Comment
+    theme: github-light
 
   social:
     - name: "github"
