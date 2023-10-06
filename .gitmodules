@@ -4,3 +4,9 @@
 [submodule "themes/hugo-coder"]
 	path = themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder
+[submodule "themes/risotto"]
+	path = themes/risotto
+	url = https://github.com/joeroe/risotto.git
+[submodule "themes/mainroad"]
+	path = themes/mainroad
+	url = https://github.com/vimux/mainroad.git
