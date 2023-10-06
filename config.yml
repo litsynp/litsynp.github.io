@@ -1,13 +1,17 @@
 baseURL: https://blog.litsynp.com/
 title: litsynp.log
-theme: hugo-coder
+theme: risotto
 languagecode: "en"
 defaultcontentlanguage: "en"
 paginate: 20
 
 googleAnalytics: G-KNPB15W2HP
+disqusShortname: litsynp-github-io
 
-# disqusShortname: litsynp-github-io
+# risotto theme
+sectionPagesMenu: main
+enableInlineShortcodes: true
+copyright: "© [litsynp](https://github.com/litsynp)."
 
 # robots.txt
 enableRobotsTXT: true
@@ -53,29 +57,32 @@ params:
   favicon_32: "favicon.ico"
   favicon_16: "favicon.ico"
 
+  about:
+    title: "litsynp.log"
+
   utterances:
     repo: litsynp/litsynp.github.io
     issueTerm: pathname
     label: Comment
     theme: github-light
 
-  social:
-    - name: "github"
-      icon: "fa fa-github fa-2x"
+  socialLinks:
+    - title: "GitHub"
+      icon: "fa-brands fa-github"
       weight: 1
       url: "https://www.github.com/litsynp"
-    - name: "gitbook"
-      icon: "fa fa-book fa-2x"
+    - title: "GitBook"
+      icon: "fa fa-book"
       weight: 2
       url: "https://docs.litsynp.com"
-    - name: "email"
-      icon: "fa fa-envelope-square fa-2x"
+    - title: "Email"
+      icon: "fa-solid fa-envelope"
       weight: 2
       url: "mailto:nocte55is@gmail.com"
-    - name: "articles"
-      icon: "fa fa-pencil-square fa-2x"
+    - title: "Posts"
+      icon: "fa fa-pencil-square"
       weight: 2
-      url: "https://blog.litsynp.com/posts"
+      url: "/posts"
 
 taxonomies:
   category: categories
@@ -88,3 +95,9 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: true
