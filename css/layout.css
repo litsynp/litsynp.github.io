@@ -4,10 +4,11 @@
     max-width: 64rem;
     margin: 1rem auto;
     display: grid;
-    grid-template-areas: 
-      "header" 
-      "body" 
-      "aside" 
+    grid-template-areas:
+      "header"
+      "body"
+      "comments"
+      "aside"
       "footer";
     grid-template-columns: minmax(0, 1fr); /* https://css-tricks.com/preventing-a-grid-blowout/ */
     grid-row-gap: 2rem;
@@ -18,10 +19,57 @@
         grid-template-areas:
           "header  header"
           "body    aside"
+          "comments empty"
           "footer  footer";
         grid-template-columns: minmax(0, 1fr) 15rem;
         grid-column-gap: 2rem;
     }
+}
+
+.page__body h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.page__body h1:after {
+    content: ' ';
+    display: block;
+    border: 1px dashed var(--muted);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.page__body h2 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+.page__body h2:after {
+    content: ' ';
+    display: block;
+    border: 1px dashed var(--muted);
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.page__body h3 {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.page__body h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.page__body p {
+    line-height: 1.5;
+}
+
+.page__body li {
+    line-height: 1.5;
 }
 
 /* Header */
@@ -49,6 +97,10 @@
 .page__aside {
     grid-area: aside;
     color: var(--off-fg);
+}
+
+.page__comments {
+    grid-area: comments;
 }
 
 /* Footer */
