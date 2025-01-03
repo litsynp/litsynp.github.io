@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>[프로그래머스][Level 2][#17679] 프렌즈4블록 해설 &ndash; litsynp.log</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://blog.litsynp.com/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/risotto.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/custom.css">
+
+
+<link rel="icon" href="https://blog.litsynp.com/favicon.ico">
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+    <h1 class="page__logo"><a href="https://blog.litsynp.com/" class="page__logo-inner">litsynp.log</a></h1>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/posts" title="">posts</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/tags" title="">tags</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/categories" title="">categories</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/series" title="">series</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>[프로그래머스][Level 2][#17679] 프렌즈4블록 해설</h1>
+    </header>
+    
+    <div class="content__body">
+        <h2 id="about">About</h2>
+<ul>
+<li><strong>사이트</strong>: 프로그래머스</li>
+<li><strong>이름</strong>: [1차] 프렌즈4블록</li>
+<li><strong>수준</strong>: LEVEL 2</li>
+<li><strong>유형</strong>: 구현</li>
+<li><strong>출제</strong>: 2018 KAKAO BLIND RECRUITMENT</li>
+<li><strong>주소</strong>: <a href="https://programmers.co.kr/learn/courses/30/lessons/17679">https://programmers.co.kr/learn/courses/30/lessons/17679</a></li>
+</ul>
+<h2 id="참고">참고</h2>
+<p><a href="https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%94%84%EB%A0%8C%EC%A6%884%EB%B8%94%EB%A1%9D-Java">참고 블로그</a></p>
+<h2 id="해설">해설</h2>
+<p>주석을 달아두어 이해하기 쉬울 것이다.</p>
+<p>enum, BFS, DFS를 처음에 생각했으나, 생각보다 단순하게 접근하면 되는 문제였다.</p>
+<p>블록은 한번에 삭제되는 것이 아니라 4칸의 영역이 겹칠 수 있다. 따라서 따로 <code>checked</code> 라는 것을 둘 것이다.</p>
+<p>문자를 넣어둘 <code>map</code>과, 삭제할 블록의 위치를 담아두는 <code>checked</code>를 둔다.</p>
+<p>그리고 다음의 순서로 진행한다.</p>
+<ol>
+<li>
+<p>모든 블록에 대해서, 빈 칸이 아닐 경우에 주변 4개를 검사한다. 주변 4개를 검사해서 같은 블록이 있다면 check 해둔다.</p>
+</li>
+<li>
+<p>다시 모든 블록에 대해서, check된 좌표를 삭제한다. 삭제한 개수는 따로 저장해둔다.</p>
+</li>
+<li>
+<p>삭제된 것이 하나도 없다면 종료한다. 삭제된 것이 있다면 <code>answer</code>에 개수를 더한다.</p>
+</li>
+<li>
+<p>삭제된 것이 있다면 중간 중간 빈칸이 생겼을텐데, 빈칸에 대해서는 블록을 하나씩 내려준다.</p>
+</li>
+</ol>
+<h2 id="코드">코드</h2>
+<p><a href="https://github.com/litsynp/ps-java/blob/main/app/src/main/java/psjava/programmers/challenges/level2/Q17679.java">GitHub</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Q17679</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solution</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> m<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> String<span style="color:#f92672">[]</span> board<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span><span style="color:#f92672">[][]</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[</span>m<span style="color:#f92672">][</span>n<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> m<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            map<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> board<span style="color:#f92672">[</span>i<span style="color:#f92672">].</span><span style="color:#a6e22e">toCharArray</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> answer <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// m: 세로 길이
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// n: 가로 길이
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 삭제할 블록 수
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> checkBlock<span style="color:#f92672">(</span>m<span style="color:#f92672">,</span> n<span style="color:#f92672">,</span> map<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 삭제한 블록이 없다면 종료
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>count <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            answer <span style="color:#f92672">+=</span> count<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 빈 칸이 생겼다면 내려보냄
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            dropBlock<span style="color:#f92672">(</span>m<span style="color:#f92672">,</span> n<span style="color:#f92672">,</span> map<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> answer<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">checkBlock</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> m<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[][]</span> map<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[][]</span> checked <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[</span>m<span style="color:#f92672">][</span>n<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 모든 블록에 대해서
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> r <span style="color:#f92672">&lt;</span> m <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> r<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> c <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> c<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 비어있으면 지나감
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 비어있지 않다면 인접한 4칸 검사
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// 인접한 같은 종류의 4 블록이 있다면 check = true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                checkFour<span style="color:#f92672">(</span>map<span style="color:#f92672">,</span> checked<span style="color:#f92672">,</span> r<span style="color:#f92672">,</span> c<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 체크된 블록을 모두 빈 칸으로 만듦
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> r <span style="color:#f92672">&lt;</span> m<span style="color:#f92672">;</span> r<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> c <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> c<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>checked<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 빈칸이 된 블록 = &#34;삭제할 블록&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    count<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                    map<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 삭제할 블록 개수 반환
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> count<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dropBlock</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> m<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">[][]</span> map<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> c <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> c<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 맨 아랫줄부터 좌-&gt;우 검사
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> r <span style="color:#f92672">=</span> m <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> r <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> r<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// 비어있는 공간이 있다면
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// 위로 한칸씩 올라가면서 블록을 찾으면 밑으로 내림
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> nr <span style="color:#f92672">=</span> r <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> nr <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> nr<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map<span style="color:#f92672">[</span>nr<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                            map<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>nr<span style="color:#f92672">][</span>c<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>                            map<span style="color:#f92672">[</span>nr<span style="color:#f92672">][</span>c<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">checkFour</span><span style="color:#f92672">(</span><span style="color:#66d9ef">char</span><span style="color:#f92672">[][]</span> map<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[][]</span> checked<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> r<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 현재 블록 종류
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">char</span> block <span style="color:#f92672">=</span> map<span style="color:#f92672">[</span>r<span style="color:#f92672">][</span>c<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 현재 블록을 포함해서 같은 종류의 블럭 4개가 인접한지 체크
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// X: 현재 블록, O: 검사할 인접한 블록
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// XO
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// OO
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 의 방향으로만 검사
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> r<span style="color:#f92672">;</span> x <span style="color:#f92672">&lt;=</span> r <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span> x<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span> y <span style="color:#f92672">&lt;=</span> c <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span> y<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>map<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>y<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> block<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 모두 인접하다면 check
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> r<span style="color:#f92672">;</span> x <span style="color:#f92672">&lt;=</span> r <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span> x<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span> y <span style="color:#f92672">&lt;=</span> c <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span> y<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                checked<span style="color:#f92672">[</span>x<span style="color:#f92672">][</span>y<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+<h1 class="about__title">litsynp.log</h1>
+
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://www.github.com/litsynp" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://docs.litsynp.com" rel="me" aria-label="GitBook" title="GitBook"><i class="fa fa-book" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:nocte55is@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="/posts" rel="me" aria-label="Posts" title="Posts"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2022-06-05
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <section class="page__comments"></section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright">© <a href="https://github.com/litsynp">litsynp</a>.</p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
