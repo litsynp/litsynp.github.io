@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>Troubleshooting Spring Boot &#43; Spring REST Docs &#43; Kotlin &#43; Gradle 7 &ndash; litsynp.log</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://blog.litsynp.com/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/risotto.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/custom.css">
+
+
+<link rel="icon" href="https://blog.litsynp.com/favicon.ico">
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+    <h1 class="page__logo"><a href="https://blog.litsynp.com/" class="page__logo-inner">litsynp.log</a></h1>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/posts" title="">posts</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/tags" title="">tags</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/categories" title="">categories</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/series" title="">series</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Troubleshooting Spring Boot + Spring REST Docs + Kotlin + Gradle 7</h1>
+    </header>
+    
+    <div class="content__body">
+        <h1 id="spring-rest-docs-설정하기">Spring REST Docs 설정하기</h1>
+<p>Spring REST Docs를 설정하고 싶은데, Gradle 7, Kotlin, build.gradle.kts를 사용하는 예제를 찾아보기 어려웠다.</p>
+<p>Kotlin을 사용하는 Spring Boot에서, 다음 환경으로 진행한다.</p>
+<ul>
+<li><strong>Gradle 7</strong></li>
+<li>Gradle Kotlin DSL을 사용하는 <code>build.gradle.kts</code> 사용</li>
+</ul>
+<h2 id="첫-번째-이슈---indexadoc-생성">첫 번째 이슈 - index.adoc 생성</h2>
+<p>어찌저찌 테스트 코드를 작성하고 빌드하면 테스트 코드에 따라 <code>build/generated-snippets</code> 경로 안에 *.adoc 파일들이 생성된다.</p>
+<p>하지만 <code>index.html</code> 파일이 생성되지 않았다.</p>
+<p>예제를 대충 읽었기 때문에 놓친 부분이 있었는데, <code>index.adoc</code> 파일을 작성해야 했다.</p>
+<p><a href="https://gaemi606.tistory.com/entry/Spring-Boot-REST-Docs-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">Spring Boot | REST Docs 적용하기 ( + build failed 해결.. )</a> 글을 읽어보고 <code>src/docs/asciidoc/</code> 경로에 <code>index.adoc</code> 파일을 만들어본다.</p>
+<h2 id="두-번째-이슈---gradle-7과-asciidoc의-문제">두 번째 이슈 - Gradle 7과 asciidoc의 문제</h2>
+<p><em>Spring Initializr</em>을 이용하여 스프링 부트 프로젝트를 만든 상태였고, 자동으로 <code>org.asciidoctor.convert</code> 플러그인이 설정된 상황이었다.</p>
+<p>그런데 <code>./gradlew asciidoctor</code>을 실행했을 때 나오는 오류가 다음과 같았다.</p>
+<pre tabindex="0"><code>In plugin &#39;org.asciidoctor.convert&#39; type &#39;org.asciidoctor.gradle.AsciidoctorTask&#39; method &#39;asGemPath()&#39; should not be annotated with: @Optional, @InputDirectory.
+</code></pre><p>구글링을 통해 찾아보니, Gradle 7과는 해당 플러그인이 현재 호환이 되지 않는 것으로 판단되었다.</p>
+<p>선택 가능한 방법은 다음과 같다.</p>
+<ol>
+<li>
+<p>Gradle의 버전을 6 이하의 버전으로 낮춘다.</p>
+</li>
+<li>
+<p>오류를 잘 수정해본다.</p>
+</li>
+</ol>
+<p>Gradle 7을 현재 사용 중이기 때문에 1번과 같이 그냥 버전을 낮추는 건 찜찜했다. 따라서 오류를 잘 수정해보기로 했다.</p>
+<p>찾아봐도 어떻게 고쳐야되는지 예제가 잘 안나오지만, 결국 GitHub에서 되는 예제를 찾았다!</p>
+<p>다음과 같이 진행하면 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>plugins {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    id(<span style="color:#e6db74">&#34;org.asciidoctor.jvm.convert&#34;</span>) version <span style="color:#e6db74">&#34;3.3.2&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> asciidoctorExtensions: Configuration <span style="color:#66d9ef">by</span> configurations.creating
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dependencies {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    asciidoctorExtensions(<span style="color:#e6db74">&#34;org.springframework.restdocs:spring-restdocs-asciidoctor&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>tasks.clean {
+</span></span><span style="display:flex;"><span>    delete(<span style="color:#e6db74">&#34;src/main/resources/static/docs&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks.test {
+</span></span><span style="display:flex;"><span>    systemProperty(<span style="color:#e6db74">&#34;org.springframework.restdocs.outputDir&#34;</span>, snippetsDir)
+</span></span><span style="display:flex;"><span>    outputs.dir(snippetsDir)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks.build {
+</span></span><span style="display:flex;"><span>    dependsOn(<span style="color:#e6db74">&#34;copyDocument&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks.asciidoctor {
+</span></span><span style="display:flex;"><span>    dependsOn(tasks.test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    attributes(
+</span></span><span style="display:flex;"><span>        mapOf(<span style="color:#e6db74">&#34;snippets&#34;</span> to snippetsDir)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    inputs.dir(snippetsDir)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    doFirst {
+</span></span><span style="display:flex;"><span>        delete(<span style="color:#e6db74">&#34;src/main/resources/static/docs&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks.register(<span style="color:#e6db74">&#34;copyDocument&#34;</span>, Copy<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>) {
+</span></span><span style="display:flex;"><span>    dependsOn(tasks.asciidoctor)
+</span></span><span style="display:flex;"><span>    from(tasks.asciidoctor.<span style="color:#66d9ef">get</span>().outputDir)
+</span></span><span style="display:flex;"><span>    into(<span style="color:#66d9ef">file</span>(<span style="color:#e6db74">&#34;src/main/resources/static/docs&#34;</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tasks.bootJar {
+</span></span><span style="display:flex;"><span>    dependsOn(tasks.asciidoctor)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    from(tasks.asciidoctor.<span style="color:#66d9ef">get</span>().outputDir) {
+</span></span><span style="display:flex;"><span>        into(<span style="color:#e6db74">&#34;BOOT-INF/classes/static/docs&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="ref">REF</h2>
+<h3 id="spring-rest-docs-in-general">Spring REST Docs in General</h3>
+<p><a href="https://github.com/sangwoobae/kotlin-spring-rest-docs">Spring REST Docs + Kotlin 예제</a></p>
+<p><a href="https://techblog.woowahan.com/2625/">‘Gradle Kotlin DSL’ 이야기</a></p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>첫 번째 이슈</p>
+<ul>
+<li>
+<p><a href="https://blog.naver.com/PostView.naver?blogId=qjawnswkd&amp;logNo=222409742108&amp;parentCategoryNo=&amp;categoryNo=41&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView">https://blog.naver.com/PostView.naver?blogId=qjawnswkd&amp;logNo=222409742108&amp;parentCategoryNo=&amp;categoryNo=41&amp;viewDate=&amp;isShowPopularPosts=false&amp;from=postView</a></p>
+</li>
+<li>
+<p><a href="https://gaemi606.tistory.com/entry/Spring-Boot-REST-Docs-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">Spring Boot | REST Docs 적용하기 ( + build failed 해결.. )</a></p>
+</li>
+</ul>
+<p>두 번째 이슈</p>
+<ul>
+<li>
+<p><a href="https://velog.io/@max9106/Spring-Spring-rest-docs%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%AC%B8%EC%84%9C%ED%99%94">[Spring] Spring rest docs 적용기(gradle 7.0.2)</a></p>
+</li>
+<li>
+<p>결론으로, 다음 GitHub에 올라온 이슈에서의 <code>build.gradle.kts</code>를 따라하여 해결</p>
+<ul>
+<li><a href="https://github.com/spring-io/start.spring.io/issues/676">Configure a Gradle 7 compatible version of Asciidoctor&rsquo;s Gradle plugin in projects using REST Docs #676</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+<h1 class="about__title">litsynp.log</h1>
+
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://www.github.com/litsynp" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://docs.litsynp.com" rel="me" aria-label="GitBook" title="GitBook"><i class="fa fa-book" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:nocte55is@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="/posts" rel="me" aria-label="Posts" title="Posts"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2022-04-08
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <section class="page__comments"></section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright">© <a href="https://github.com/litsynp">litsynp</a>.</p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on litsynp.log</title>
+    <link>https://blog.litsynp.com/series/</link>
+    <description>Recent content in Series on litsynp.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© [litsynp](https://github.com/litsynp).</copyright>
+    <lastBuildDate>Sun, 12 Jun 2022 12:21:17 +0900</lastBuildDate><atom:link href="https://blog.litsynp.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>코딩테스트 문제풀이</title>
+      <link>https://blog.litsynp.com/series/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/</link>
+      <pubDate>Sun, 12 Jun 2022 12:21:17 +0900</pubDate>
+      
+      <guid>https://blog.litsynp.com/series/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring 알아보기</title>
+      <link>https://blog.litsynp.com/series/spring-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0/</link>
+      <pubDate>Sat, 04 Jun 2022 23:55:52 +0900</pubDate>
+      
+      <guid>https://blog.litsynp.com/series/spring-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>독서 - 클린 코더</title>
+      <link>https://blog.litsynp.com/series/%EB%8F%85%EC%84%9C-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%8D%94/</link>
+      <pubDate>Fri, 27 May 2022 23:02:28 +0900</pubDate>
+      
+      <guid>https://blog.litsynp.com/series/%EB%8F%85%EC%84%9C-%ED%81%B4%EB%A6%B0-%EC%BD%94%EB%8D%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>코딩테스트</title>
+      <link>https://blog.litsynp.com/series/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/</link>
+      <pubDate>Fri, 06 May 2022 23:36:45 +0900</pubDate>
+      
+      <guid>https://blog.litsynp.com/series/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Django REST Framework 팁</title>
+      <link>https://blog.litsynp.com/series/django-rest-framework-%ED%8C%81/</link>
+      <pubDate>Wed, 05 Jan 2022 23:31:28 -0800</pubDate>
+      
+      <guid>https://blog.litsynp.com/series/django-rest-framework-%ED%8C%81/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head><title>Redis Keys and Values &ndash; litsynp.log</title>
+<meta name="description" content="">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+
+
+<link rel="stylesheet" href="https://blog.litsynp.com/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/risotto.css">
+<link rel="stylesheet" href="https://blog.litsynp.com/css/custom.css">
+
+
+<link rel="icon" href="https://blog.litsynp.com/favicon.ico">
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+    <h1 class="page__logo"><a href="https://blog.litsynp.com/" class="page__logo-inner">litsynp.log</a></h1>
+    
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/posts" title="">posts</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/tags" title="">tags</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/categories" title="">categories</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://blog.litsynp.com/series" title="">series</a></li>
+    
+    </ul>
+</nav>
+
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Redis Keys and Values</h1>
+    </header>
+    
+    <div class="content__body">
+        <h2 id="keys">Keys</h2>
+<p><a href="https://redis.io/docs/manual/data-types/data-types-tutorial/">Data types tutorial</a></p>
+<p>Redis keys are binary-safe. It means you can use any binary sequence as a key, from a string ‘foo’ to the content of a JPEG file. The empty string “” is also a valid key.</p>
+<ul>
+<li><strong>Very long keys</strong> are not a good idea. They take more memory, and more time in the lookup with costly key-comparison.</li>
+<li><strong>Very short keys</strong> are often not a good idea. They harm readability and added space is often minor.</li>
+<li>Try to stick with a <strong>schema</strong>. For instance, “object-type:id” (”user:1000”). Dots (.) or dashes (-) are often used for multi-word fields, as in “comment:431:reply.to” or “comment:4321:reply-to”.</li>
+<li>The <strong>maximum</strong> allowed key size is 512 MB.</li>
+</ul>
+<h2 id="data-types">Data Types</h2>
+<p><a href="https://redis.io/docs/manual/data-types/">Redis data types</a></p>
+<ul>
+<li><strong>Strings</strong>: most basic and simplest data type
+<ul>
+<li>can be used for atomic counters</li>
+</ul>
+</li>
+<li><strong>Lists</strong>: ordered list of strings
+<ul>
+<li><code>LPUSH</code>, <code>RPUSH</code></li>
+</ul>
+</li>
+<li><strong>Sets</strong>: unrepeated, unordered collection of Strings</li>
+<li><strong>Hashes</strong>: maps between String fields and String values</li>
+<li><strong>Sorted Sets</strong>: not repeating collection of Strings, each member associated with a <code>score</code>, used to keep the Sorted Set in order from smallest to greatest score.</li>
+<li><strong>Bitmaps</strong> and <strong>HyperLogLogs</strong>: data types based on String base type, with their own semantics</li>
+<li><strong>Streams</strong>: data structure that acts like an append-only log. useful for recording events in the order they occur.</li>
+<li><strong>Geospatial Indexes</strong>: useful for finding locations within a given geographic radius.</li>
+</ul>
+
+    </div>
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+<h1 class="about__title">litsynp.log</h1>
+
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://www.github.com/litsynp" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://docs.litsynp.com" rel="me" aria-label="GitBook" title="GitBook"><i class="fa fa-book" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="mailto:nocte55is@gmail.com" rel="me" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="/posts" rel="me" aria-label="Posts" title="Posts"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    
+    
+        <p>
+            
+            2022-06-18
+        </p>
+    
+
+    
+
+                </div>
+            </section>
+
+            <section class="page__comments"></section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright">© <a href="https://github.com/litsynp">litsynp</a>.</p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
+</html>
