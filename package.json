@@ -1,0 +1,28 @@
+{
+  "name": "litsynp.github.io",
+  "version": "1.0.0",
+  "description": "My personal blog.",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/litsynp/litsynp.github.io.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": {
+    "name": "SJ Lee"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

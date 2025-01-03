@@ -18,3 +18,10 @@ hugo.linux
 # IDE
 .vscode
 .idea
+
+# node
+node_modules/
+
+# 11ty
+_site/
+
