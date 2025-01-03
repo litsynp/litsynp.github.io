@@ -1,6 +1,12 @@
 ---
-title: Hello World
+title: litsynp.log
 layout: "base.njk"
 ---
 
-Hello World!
+## Posts
+
+{% for post in collections.posts reversed %}
+
+- {{ post.data.date | postDate }} [{{ post.data.title }}]({{ post.url }})
+
+{% endfor %}
