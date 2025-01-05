@@ -42,6 +42,7 @@ public class WebClientConfig {
 Finally, inject WebClientBuilder into the service and build the web client to call the external API.
 
 {% raw %}
+
 ```java
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -80,6 +81,7 @@ public class ExterrnalApiService {
     }
 }
 ```
+
 {% endraw %}
 
 \* Used https://randomuser.me and https://gorest.co.in for external API testing.

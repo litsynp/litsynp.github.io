@@ -43,7 +43,6 @@ $ hugo server
 
 이처럼 직접 수정해야 하는 경우에도 fork를 떠서 수정이 가능하다.
 
-
 ## 댓글 기능 추가
 
 Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.
@@ -56,7 +55,6 @@ Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.
 
 둘다 theme에서 지원만 된다면 추가는 쉬우니 구글을 참고하자. 보통 .html 파일을 추가하고 `layouts`에서 include하면 된다. 일부 theme에는 단순히 `config` 파일에서 키-밸류만 추가해도 되는 경우도 있다.
 
-
 ## 도메인 등록
 
 도메인 등록은 가장 싼 곳에서 등록하면 된다.
@@ -65,7 +63,6 @@ Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.
 
 블로그 찾아보면 충분히 설명이 많으니 이 부분은 생략한다.
 
-
 ## Google Analytics 등록
 
 이 부분은 그렇게 어렵지 않다. Hugo 자체에서 지원하는데, `config.toml`에 다음과 같이 작성하면 된다.
@@ -73,7 +70,6 @@ Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.
 ```toml
 googleAnalytics = "UA-XXXXXXXXX-X"
 ```
-
 
 ## Google Search Console 등록
 
@@ -85,7 +81,6 @@ Google Search Console 등록은 꽤나 까다로운데:
 2. 인덱싱이 완료될 때까지 기다린다.
 3. `sitemap.xml`을 등록한다.
 
-
 yaml 파일로 작성하는 경우에는 다음과 같다.
 
 ```yaml
@@ -94,13 +89,11 @@ googleAnalytics: UA-XXXXXXXXX-X
 
 Naver 등 다른 검색 엔진에 등록하는 법은 아티클 최하단 **References**를 참고하자.
 
-
 ## 마치며
 
 개발 블로그를 만들 생각이 있다면 Hugo를 100%는 아니더라도 고려해볼만 하다.
 
 혼자 처음부터 만드려면 page navigation부터 시작해서 최적화, analytics, SEO 등 고려할 것들이 많은데, Hugo를 사용하면 이런 것들을 많이 신경쓰지 않아도 어느 정도 해결이 된다.
-
 
 ## Links
 

@@ -75,8 +75,8 @@ Text Editor, vscode 등에서 이런 식으로 일단 아무 글자를 입력해
 ## Ref
 
 - [macOS Monterey 키보드 입력 버그
-](https://jybaek.tistory.com/954)
+  ](https://jybaek.tistory.com/954)
 - [인풋에서 한글 자음 입력 후 백스페이스로 지울시에 인풋에 완전히 지워지지 않고 \b가 포함되는 문제
-](https://support.google.com/chrome/thread/167391056/%EC%9D%B8%ED%92%8B%EC%97%90%EC%84%9C-%ED%95%9C%EA%B8%80-%EC%9E%90%EC%9D%8C-%EC%9E%85%EB%A0%A5-%ED%9B%84-%EB%B0%B1%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%A1%9C-%EC%A7%80%EC%9A%B8%EC%8B%9C%EC%97%90-%EC%9D%B8%ED%92%8B%EC%97%90-%EC%99%84%EC%A0%84%ED%9E%88-%EC%A7%80%EC%9B%8C%EC%A7%80%EC%A7%80-%EC%95%8A%EA%B3%A0-b%EA%B0%80-%ED%8F%AC%ED%95%A8%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C?hl=ko)
+  ](https://support.google.com/chrome/thread/167391056/%EC%9D%B8%ED%92%8B%EC%97%90%EC%84%9C-%ED%95%9C%EA%B8%80-%EC%9E%90%EC%9D%8C-%EC%9E%85%EB%A0%A5-%ED%9B%84-%EB%B0%B1%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%A1%9C-%EC%A7%80%EC%9A%B8%EC%8B%9C%EC%97%90-%EC%9D%B8%ED%92%8B%EC%97%90-%EC%99%84%EC%A0%84%ED%9E%88-%EC%A7%80%EC%9B%8C%EC%A7%80%EC%A7%80-%EC%95%8A%EA%B3%A0-b%EA%B0%80-%ED%8F%AC%ED%95%A8%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C?hl=ko)
 - [How can I put 0x08 ascii character using MacBook?
-](https://stackoverflow.com/questions/4946056/how-can-i-put-0x08-ascii-character-using-macbook)
+  ](https://stackoverflow.com/questions/4946056/how-can-i-put-0x08-ascii-character-using-macbook)

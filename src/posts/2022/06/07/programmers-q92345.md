@@ -40,6 +40,7 @@ DFS로 풀도록 하는데, 다음 조건으로 return 해본다.
 [GitHub](https://github.com/litsynp/ps-java/blob/main/app/src/main/java/psjava/XXX.java)
 
 {% raw %}
+
 ```java
 public class Q92345 {
 
@@ -91,6 +92,7 @@ public class Q92345 {
     }
 }
 ```
+
 {% endraw %}
 
 ## 관련 있는 / 유사한 알고리즘

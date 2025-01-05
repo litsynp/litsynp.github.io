@@ -11,7 +11,7 @@ toc: true
 
 난 프로그래밍을 시작하기 전부터, 즉, 중학생 때부터, 맥, 안드로이드, 리눅스 등 다양한 운영체제를 설치해보고 탐구해보는 것을 즐겼다.
 
-리눅스를 써보면서 [vi](https://en.wikipedia.org/wiki/Vi), [nano](https://www.nano-editor.org/) 등의 에디터를 접할 일이 많았는데, 
+리눅스를 써보면서 [vi](https://en.wikipedia.org/wiki/Vi), [nano](https://www.nano-editor.org/) 등의 에디터를 접할 일이 많았는데,
 운영체제를 셋업하면서 간단하게 정보를 수정해야되는 경우가 있어서 그럴 때마다 어색한 기분을 느꼈다(물론 nano는 그냥 텍스트 에디터다).
 
 방향키와 WASD도 충분한데 왜 hjkl로 움직이며, 마우스를 사용하는게 아무리 생각해도 더 빠른데 이걸 왜 쓰는걸까? 라는 생각이 많았다.
@@ -87,4 +87,3 @@ kickstart.nvim은 요약하자면 "reasonable한" default 설정을 제공한다
 
 ![My nvim Setup](https://github.com/litsynp/litsynp.github.io/assets/42485462/fac48b37-b473-4fce-9a80-3652f4424422)
 (현재 셋업. [Warp](https://www.warp.dev/)라는 터미널 클라이언트와 테마를 일치시켜 보았다.)
-
