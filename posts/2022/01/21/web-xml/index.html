@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>[TIR] About web.xml</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>[TIR] About web.xml</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h1>Today I Read</h1>
+      <main>
+        <h1>Today I Read</h1>
 <h2>Reference</h2>
 <p>https://tlatmsrud.tistory.com/35</p>
 <h2>What I Learned</h2>
@@ -84,6 +111,16 @@
 <li>e.g.) <em>Encoding Filter</em>가 적용되어 있다면 클라이언트의 요청 데이터를 인코딩하는 작업이 선 처리된 후 <code>DispatcherServlet</code>에게 필터링 된 데이터가 전달된다.</li>
 </ul>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>

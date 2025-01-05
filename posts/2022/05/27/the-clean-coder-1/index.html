@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>클린 코더 (The Clean Coder) 독서 - 1</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>클린 코더 (The Clean Coder) 독서 - 1</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h1>클린 코더 (The Clean Coder) 독서 - 1</h1>
+      <main>
+        <h1>클린 코더 (The Clean Coder) 독서 - 1</h1>
 <h2>음악 들으면서</h2>
 <p>false</p>
 <h2>About</h2>
@@ -43,6 +70,16 @@ Reference: https://en.academic.ru/pictures/enwiki/70/FortranCodingForm.agr.jpg</
 <h2>다음에 계속</h2>
 <p>책 더 읽으면 더 작성 예정!</p>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>

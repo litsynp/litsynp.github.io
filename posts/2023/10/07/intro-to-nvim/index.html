@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>nvim 입문기</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>nvim 입문기</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h2>첫 만남</h2>
+      <main>
+        <h2>첫 만남</h2>
 <p>난 프로그래밍을 시작하기 전부터, 즉, 중학생 때부터, 맥, 안드로이드, 리눅스 등 다양한 운영체제를 설치해보고 탐구해보는 것을 즐겼다.</p>
 <p>리눅스를 써보면서 <a href="https://en.wikipedia.org/wiki/Vi">vi</a>, <a href="https://www.nano-editor.org/">nano</a> 등의 에디터를 접할 일이 많았는데,
 운영체제를 셋업하면서 간단하게 정보를 수정해야되는 경우가 있어서 그럴 때마다 어색한 기분을 느꼈다(물론 nano는 그냥 텍스트 에디터다).</p>
@@ -59,6 +86,16 @@
 <p><picture><source type="image/webp" srcset="/posts/2023/10/07/intro-to-nvim/tQ2qjOK9cF-2470.webp 2470w" sizes="auto"><img loading="lazy" decoding="async" src="/posts/2023/10/07/intro-to-nvim/tQ2qjOK9cF-2470.jpeg" alt="My nvim Setup" width="2470" height="1776"></picture>
 (현재 셋업. <a href="https://www.warp.dev/">Warp</a>라는 터미널 클라이언트와 테마를 일치시켜 보았다.)</p>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>

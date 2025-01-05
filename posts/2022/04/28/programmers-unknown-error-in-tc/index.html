@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h1>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</h1>
+      <main>
+        <h1>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</h1>
 <p>프로그래머스에서 문제를 푸는데 아무리 해도 정답이 맞지 않는 경우가 있다.</p>
 <p>그건 어쩌면 logic이 틀린게 아니라 변수 초기화 시점이 잘못됐을 수도 있다.</p>
 <p>static을 이용해 전역으로 설정하고 있었다면,</p>
@@ -22,6 +49,16 @@
 <p>이런 식으로 실전에서 맞아야 할 몇 문제를 더 틀렸을 수도 있었을 것 같다...</p>
 <p>주의 해야겠다!</p>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>

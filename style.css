@@ -1,3 +1,152 @@
-body {
+* {
+  /* Fonts */
+  font-size: 16px;
   font-family: sans-serif;
 }
+
+@media (max-width: 500px) {
+  * {
+    font-size: 12px;
+  }
+}
+
+html {
+  display: block;
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.heading {
+  margin-top: 1rem;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ul {
+  padding-left: 2rem;
+}
+ol {
+  padding-left: 2rem;
+}
+li {
+}
+
+/* ========== LINKS ========== */
+/* unvisited link */
+a:link {
+  color: #000;
+  font-weight: bold;
+}
+
+/* visited link */
+a:visited {
+  color: #000;
+  font-weight: bold;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+/* selected link */
+a:active {
+  color: #000;
+  font-weight: bold;
+}
+/* ========== /LINKS ========== */
+
+/* ========== HEADER ========== */
+.header {
+  padding: 20px;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* unvisited link */
+.header a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+/* visited link */
+.header a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+/* mouse over link */
+.header a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+/* selected link */
+.header a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-inner-container {
+  width: 16rem;
+  max-width: 100%;
+
+  text-align: center;
+}
+
+.header-inner-container > nav {
+  display: flex;
+  justify-content: space-between;
+}
+/* ========== /HEADER ========== */
+
+/* ========== FOOTER ========== */
+footer {
+  width: 100%;
+  max-width: 900px;
+}
+
+footer p {
+  user-select: none;
+}
+/* ========== /FOOTER ========== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000;
+}
+
+/* ========== CODE ========== */
+code {
+  padding: 1px 2px 1px 2px;
+  overflow: auto;
+  display: inline;
+  border-radius: 3px;
+
+  background-color: #f1f1f1;
+  color: #000;
+
+  font-family: monospace;
+}
+pre:has(> code) {
+  border: 1px solid #000;
+  background-color: #f1f1f1;
+}
+/* ========== /CODE ========== */

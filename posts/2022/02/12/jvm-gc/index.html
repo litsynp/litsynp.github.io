@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>[Java] Garbage Collector in JVM</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>[Java] Garbage Collector in JVM</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h1>Garbage Collection</h1>
+      <main>
+        <h1>Garbage Collection</h1>
 <h2>가비지 컬렉션 (Garbage Collection, GC)</h2>
 <ul>
 <li><strong>stop-the-world</strong>
@@ -43,6 +70,16 @@
 <p><a href="https://d2.naver.com/helloworld/1329">https://d2.naver.com/helloworld/1329</a></p>
 <p><a href="https://velog.io/@litien/%EA%B0%80%EB%B9%84%EC%A7%80-%EC%BB%AC%EB%A0%89%ED%84%B0GC">https://velog.io/@litien/가비지-컬렉터GC</a></p>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>

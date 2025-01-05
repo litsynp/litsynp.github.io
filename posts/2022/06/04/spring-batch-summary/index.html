@@ -3,17 +3,44 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Spring Batch와 주요 클래스 정리</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
   </head>
 
   <body>
-    <header>
-      <h1>Spring Batch와 주요 클래스 정리</h1>
-    </header>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+            </nav>
+          </div>
+        </center>
+      </header>
 
-    <main>
-      <h1>배치 개발 시나리오</h1>
+      <main>
+        <h1>배치 개발 시나리오</h1>
 <p>배치의 일반적인 시나리오는 <strong>읽기</strong> - <strong>처리</strong> - <strong>쓰기</strong>로 나누어진다.</p>
 <h1>배치 관련 객체 관계도</h1>
 <p><picture><source type="image/webp" srcset="/posts/2022/06/04/spring-batch-summary/myFQEXcr8e-924.webp 924w" sizes="auto"><img loading="lazy" decoding="async" src="/posts/2022/06/04/spring-batch-summary/myFQEXcr8e-924.jpeg" alt="Spring Batch Class Relationship" width="924" height="545"></picture></p>
@@ -227,6 +254,16 @@ public interface ItemWriter&lt;T&gt; {
 </li>
 </ul>
 
-    </main>
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
   </body>
 </html>
