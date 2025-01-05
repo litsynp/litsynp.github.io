@@ -33,7 +33,7 @@ export default async function (eleventyConfig) {
 	});
 
   eleventyConfig.addFilter("postDate", date => {
-    const dateTimeFormat = DateTime.DATE_SHORT;
+    const dateTimeFormat =  { year: "numeric", month: "2-digit", day: "2-digit" };
     if (date && typeof date.getMonth === "function") {
       return DateTime.fromJSDate(date).toLocaleString(dateTimeFormat);
     }
