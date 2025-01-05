@@ -8,7 +8,8 @@
     "start": "eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^5.0.0",
-    "luxon": "^3.5.0"
+    "luxon": "^3.5.0",
+    "prettier": "^3.4.2"
   }
 }

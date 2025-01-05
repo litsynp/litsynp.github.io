@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  
+
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -106,7 +106,7 @@ a:active {
 .header-inner-container {
   width: 16rem;
   max-width: 100%;
-  
+
   text-align: center;
 }
 
@@ -117,7 +117,7 @@ a:active {
 /* ========== /HEADER ========== */
 
 /* ========== FOOTER ========== */
-footer {  
+footer {
   width: 100%;
   max-width: 900px;
 }
@@ -139,14 +139,14 @@ code {
   overflow: auto;
   display: inline;
   border-radius: 3px;
-  
-  background-color: #F1F1F1;
+
+  background-color: #f1f1f1;
   color: #000;
 
   font-family: monospace;
 }
 pre:has(> code) {
   border: 1px solid #000;
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
 /* ========== /CODE ========== */
