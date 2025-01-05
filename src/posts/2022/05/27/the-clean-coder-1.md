@@ -53,7 +53,8 @@ OMR 카드의 시초라고 할 수 있다. **입력장치**이자 **기억장치
 
 천공카드가 쓰이던 시절에는 주로 코볼과 포트란이 대표적으로 사용됐다고 한다. 언어 자체적으로 80 컬럼에 맞춰 코딩하도록 되어 있다고 한다. 그리고 코딩의 편의를 제공하도록 미리 인쇄된 코딩 용지 (**Coding Form**)이 있다고 한다. 아래와 같이 생겼다.
 
-![Fortran Coding Form](https://en.academic.ru/pictures/enwiki/70/FortranCodingForm.agr.jpg)
+![Fortran Coding Form](/assets/img/FortranCodingForm.agr.jpg)
+Reference: https://en.academic.ru/pictures/enwiki/70/FortranCodingForm.agr.jpg
 
 로버트 마틴은 코딩 양식지 (Coding Form을 의미하는 듯 하다)에 인쇄 활자체 대문자 (e.g., ABC)로 쓰고, 연필을 2번 사용했다고 한다.
 
