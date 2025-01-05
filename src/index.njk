@@ -3,7 +3,31 @@ title: litsynp.log
 layout: "base.njk"
 ---
 
-<h2>Posts</h2>
+<div class="heading">About</div>
+<hr>
+
+<p>Hi, I'm SJ.</p>
+
+<p>I love programming and minimalism.</p>
+
+<p>I enjoy programming in TypeScript, Rust, and Gleam.</p>
+
+<p>I hope you enjoy my content.</p>
+
+<div class="heading">Links</div>
+<hr>
+
+<ul>
+  <li>
+    <a href="https://github.com/litsynp">GitHub</a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/litsynp/">LinkedIn</a>
+  </li>
+</ul>
+
+<div class="heading">Recent Posts</div>
+<hr>
 
 <ul class="postlist">
   {%- for post in collections.posts | reverse | threePosts %}
@@ -14,8 +38,5 @@ layout: "base.njk"
     </li>
 
   {%- endfor %}
-
-  <li>
-    <a href="/posts">More posts...</a>
-  </li>
 </ul>
+<a href="/posts">More</a>
