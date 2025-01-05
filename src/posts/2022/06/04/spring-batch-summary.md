@@ -14,7 +14,7 @@ featuredImage: "https://user-images.githubusercontent.com/42485462/172010391-6e9
 
 # 배치 관련 객체 관계도
 
-![Spring Batch Class Relationship](https://docs.spring.io/spring-batch/docs/current/reference/html/images/spring-batch-reference-model.png)
+![Spring Batch Class Relationship](https://docs.spring.io/spring-batch/docs/4.3.5/reference/html/images/chunk-oriented-processing-with-item-processor.png)
 
 `Job`과 `Step`은 **1:M**, `Step`과 `ItemReader`, `ItemProcessor`, `ItemWriter`는 **1:1 관계**를 갖는다.
 
