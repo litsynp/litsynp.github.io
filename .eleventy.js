@@ -42,6 +42,10 @@ export default async function (eleventyConfig) {
     }
     return DateTime.fromISO(date).toLocaleString(dateTimeFormat);
   });
+
+  eleventyConfig.addFilter("threePosts", posts => {
+    return posts.slice(0, 3);
+  });
 }
 
 export const config = {

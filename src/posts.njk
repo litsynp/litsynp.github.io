@@ -1,12 +1,15 @@
 ---
-title: litsynp.log
+title: Posts from litsynp
 layout: "base.njk"
 ---
+
+
+<a href="/">&larr; Back to home</a>
 
 <h2>Posts</h2>
 
 <ul class="postlist">
-  {%- for post in collections.posts | reverse | threePosts %}
+  {%- for post in collections.posts | reverse %}
 
     <li>
       <time class="postlist-date" datetime="{{ post.data.date | postDate }}">{{ post.data.date | postDate }}</time>
@@ -14,8 +17,4 @@ layout: "base.njk"
     </li>
 
   {%- endfor %}
-
-  <li>
-    <a href="/posts">More posts...</a>
-  </li>
 </ul>
