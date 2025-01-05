@@ -5,7 +5,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/style.css");
 
   // CNAME
-  eleventyConfig.addPassthroughCopy("./src/static/CNAME");
+  eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
 
   // Image support
   eleventyConfig.addPassthroughCopy("./src/assets");
