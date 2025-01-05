@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>[DRF] Serializer에 writable non-model field 추가하기</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>[DRF] Serializer에 writable non-model field 추가하기</h1>
+    </header>
+
+    <main>
+      <h2>문제</h2>
+<p><em>Django</em> 및 <em>DRF</em>에서 model에 정의하지 않은 필드를 <strong>POST / PUT용 serializer</strong>에 추가하고 싶을 때가 있다. 그냥 <code>serializers.CharField()</code>로 추가하면 <code>unexpected keyword</code>라고 뜨면서 추가할 수 없는 문제가 발생한다.</p>
+<h2>해결법</h2>
+<p>Serializer에 추가해둔 필드를 <code>validate</code> 메소드에서 <strong>model 생성에 사용되지 않도록</strong> <code>pop()</code> 시켜준다.</p>
+<pre><code class="language-python">class UserSerializer(serializers.ModelSerializer):
+    non_model_field = serializers.CharField(max_length=300, allow_blank=True, write_only=True)
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'password', 'non_model_field')
+
+    def validate(self, attrs):
+        # ...
+        attrs.pop('non_model_field', None)
+        return super().validate(attrs)
+</code></pre>
+<h2>REF</h2>
+<p><a href="https://stackoverflow.com/questions/28322901/drf-modelserializer-with-a-non-model-write-only-field">Stack Overflow</a></p>
+
+    </main>
+  </body>
+</html>

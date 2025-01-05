@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>[프로그래머스][level 3][#92344] 파괴되지 않은 건물</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>[프로그래머스][level 3][#92344] 파괴되지 않은 건물</h1>
+    </header>
+
+    <main>
+      <h2>About</h2>
+<ul>
+<li><strong>사이트</strong>: 프로그래머스</li>
+<li><strong>이름</strong>: 파괴되지 않은 건물</li>
+<li><strong>수준</strong>: 3</li>
+<li><strong>유형</strong>: 알고리즘</li>
+<li><strong>출제</strong>: 2022 KAKAO BLIND RECRUITMENT</li>
+<li><strong>주소</strong>: https://programmers.co.kr/learn/courses/30/lessons/92344</li>
+</ul>
+<h2>해설</h2>
+<p>단순 3중 for문으로도 가능하지만, <strong>&quot;누적합&quot;</strong> 이라는 것을 이용하지 않으면 <strong>효율성에서 탈락</strong>하는 문제이다.</p>
+<p>**누적합 (Prefix Sum, Cumulatvie Sum)**이란, <strong>나열된 수의 누적된 합</strong>을 뜻한다. 연산을 적용할 범위에서 연산 시작 점에 <code>N</code>을, 연산 끝 점에 <code>-N</code>을 표기하여 나중에 한번에 합산하는 방법이다.</p>
+<p>이 문제의 경우엔 구간합을 구하는 데에 사용할 수 있다. 누적합은 1차원 배열에 적용하는 것이 기본이지만 이 문제의 경우 2차원 배열이므로 각 연산마다 4개의 좌표(범위)에 있는 값만 갱신시킨다. 갱신에 <code>O(1)</code>, 합산 과정에서 <code>O(N * M)</code> 의 시간 복잡도를 갖는다.</p>
+<ol>
+<li>일단 좌표를 받으면 누적합의 좌표로 바꿔서 누적합 연산 2차원 배열에 저장한다.</li>
+<li>연산마다 <strong>상-&gt;하</strong>, <strong>좌-&gt;우</strong> 순서로 더한다.</li>
+<li>마지막으로 2중 for문을 이용해 누적합 배열을 돌면서 파괴되지 않은 건물 (내구도가 1 이상)의 수를 더해 반환하면 된다.</li>
+</ol>
+<p>누적합을 알면 맞히고 모르면 틀리는 문제라고 볼 수 있겠다.</p>
+<h3>누적합 합산 과정</h3>
+<p>누적합 합산 과정은 다음과 같이 진행된다.</p>
+<p><picture><source type="image/webp" srcset="/posts/2022/06/12/programmers-q92344/UilhN00Dku-1440.webp 1440w" sizes="auto"><img loading="lazy" decoding="async" src="/posts/2022/06/12/programmers-q92344/UilhN00Dku-1440.jpeg" alt="image" width="1440" height="343"></picture></p>
+<h2>코드</h2>
+<pre><code class="language-java">public class Q92344 {
+
+    public int solution(int[][] board, int[][] skill) {
+
+        final int N = board.length;
+        final int M = board[0].length;
+
+        // 누적합 배열 생성
+        int[][] accMap = new int[N + 1][M + 1];
+        for (int[] s : skill) {
+            int type = s[0];
+            int r1 = s[1];
+            int c1 = s[2];
+            int r2 = s[3];
+            int c2 = s[4];
+            int degree = type == 1 ? -s[5] : s[5];
+
+            accMap[r1][c1] += degree;
+            accMap[r1][c2 + 1] += -degree;
+            accMap[r2 + 1][c1] += -degree;
+            accMap[r2 + 1][c2 + 1] += degree;
+        }
+
+        // 상하
+        for (int r = 1; r &lt; N; r++) {
+            for (int c = 0; c &lt; M; c++) {
+                accMap[r][c] += accMap[r - 1][c];
+            }
+        }
+
+        // 좌우
+        for (int c = 1; c &lt; M; c++) {
+            for (int r = 0; r &lt; N; r++) {
+                accMap[r][c] += accMap[r][c - 1];
+            }
+        }
+
+        // 결과 확인
+        int answer = 0;
+        for (int r = 0; r &lt; N; r++) {
+            for (int c = 0; c &lt; M; c++) {
+                if (board[r][c] + accMap[r][c] &gt; 0) {
+                    answer++;
+                }
+            }
+        }
+
+        return answer;
+    }
+}
+</code></pre>
+<h2>REF</h2>
+<p>https://jangcenter.tistory.com/121</p>
+<p>https://sskl660.tistory.com/77</p>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spring Boot에서 Swagger UI 접속이 안되는 경우</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Spring Boot에서 Swagger UI 접속이 안되는 경우</h1>
+    </header>
+
+    <main>
+      <h2>문제</h2>
+<hr>
+<p><strong>스프링 부트</strong>에서 <strong>Swagger2</strong>의 <code>3.0.0</code> 버전을 의존성에 추가했는데, <code>/v2/api-docs</code>는 접근이 되는데 <code>/swagger-ui</code>는 접근이 안됨.</p>
+<h2>원인</h2>
+<hr>
+<p>아마도 dependencies를 잘못 설정했을 확률이 높다.</p>
+<h2>해결법</h2>
+<hr>
+<p>Gradle 기준, <code>build.gradle</code>에서 다음과 같이 설정되어 있다면,</p>
+<pre><code>implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+</code></pre>
+<p>다음과 같이 바꾼다.</p>
+<pre><code>implementation &quot;io.springfox:springfox-boot-starter:3.0.0&quot;
+</code></pre>
+<p>다시 빌드하고 <code>/swagger-ui</code> endpoint로 접속해보면 성공!👍</p>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>[프로그래머스][Level 2][#17680] 캐시 해설</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>[프로그래머스][Level 2][#17680] 캐시 해설</h1>
+    </header>
+
+    <main>
+      <h2>About</h2>
+<ul>
+<li><strong>사이트</strong>: 프로그래머스</li>
+<li><strong>이름</strong>: [1차] 캐시</li>
+<li><strong>수준</strong>: LEVEL 2</li>
+<li><strong>유형</strong>: 자료구조</li>
+<li><strong>출제</strong>: 2018 KAKAO BLIND RECRUITMENT</li>
+<li><strong>주소</strong>: https://programmers.co.kr/learn/courses/30/lessons/17680</li>
+</ul>
+<h2>해설</h2>
+<p>LRU 캐시가 무엇인지 친절하게 해설에서 설명을 해줬다. 가장 오래된 데이터를 교체하면 된다.</p>
+<p><code>LinkedHashSet</code> 을 생각해서 풀 수도 있겠다. 하지만 자바에서 친절하게 <code>LinkedHashMap</code> 에서 <code>removeEldestEntry</code>를 오버라이딩할 수 있도록 제공해서, 이를 오버라이딩하는 것으로 쉽게 풀 수 있다.</p>
+<p><code>LinkedHashMap</code>을 생성할 때, <strong>매개변수 3개</strong> (코드 참고)를 넣어주는 것이 중요하다.</p>
+<p><code>LinkedHashMap</code>은 기본적으로 넣은 순서로 정렬되는 <strong>insertion-ordered</strong>이다. 이걸 접근 순서로 바꾸는 <strong>access-ordered</strong> (즉, <strong>LRU</strong>)로 바꾸려면 3번째 변수인 <code>accessOrder</code>에 true를 대입해줘야 한다. 두 번째 매개변수인 <code>loadFactor</code>은 <code>0.75f</code>가 optimal한 편이니 <code>0.75f</code>를 넣어주면 된다. (물론 달리 해도 동작은 한다. 참고 링크를 참고할 것)</p>
+<p>그리고 <code>cache.get()</code>를 <strong>반드시</strong> 넣어줘야 access 했는지를 <code>LinkedHashMap</code> 이 알 수 있다. <code>containsKey()</code>는 접근으로 안 쳐주는 것으로 보인다.</p>
+<p>캐시 사이즈가 0이면 저장이 안되는 조건을 처음에 놓치긴 했는데, 효율성의 문제지 빼도 작동은 할 것이다.</p>
+<h2>참고</h2>
+<p><a href="https://stackoverflow.com/questions/35838739/linkedhashmap-ordering">StackOverflow - LinkedHashMap ordering</a></p>
+<p><a href="https://stackoverflow.com/questions/61341274/why-is-loadfactor-in-hashmap-is-set-to-0-75-by-default">StackOverflow - why is loadFactor in HashMap is set to 0.75 by default? [duplicate]</a></p>
+<h2>코드</h2>
+<p><a href="https://github.com/litsynp/ps-java/blob/main/app/src/main/java/psjava/programmers/challenges/level2/Q17680.java">GitHub</a></p>
+<pre><code class="language-java">import java.util.*;
+
+public class Q17680 {
+
+    public int solution(int cacheSize, String[] cities) {
+        int answer = 0;
+
+        // 캐시 사이즈 0이면 저장이 안됨
+        if (cacheSize == 0) {
+            return cities.length * 5;
+        }
+
+        LRUCache cache = new LRUCache(cacheSize);
+        for (String city : cities) {
+            answer += cache.execute(city);
+        }
+
+        return answer;
+    }
+
+    // LRU: Least Recently Used
+    class LRUCache {
+
+        Map&lt;String, Integer&gt; cache;
+        final int cacheSize;
+
+        public LRUCache(int _cacheSize) {
+            cacheSize = _cacheSize;
+            // true를 줌으로써 &quot;insertion-ordered&quot;가 아닌 &quot;access-ordered&quot; map으로 바꾼다.
+            cache = new LinkedHashMap&lt;&gt;(cacheSize, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(java.util.Map.Entry&lt;String, Integer&gt; eldest) {
+                    // capacity보다 크면 가장 오래된 데이터를 자동으로 삭제
+                    return size() &gt; cacheSize;
+                }
+            };
+        }
+
+        public int execute(String in) {
+            in = in.toLowerCase();
+
+            if (cache.containsKey(in)) {
+                // cache hit
+                cache.get(in);
+                return 1;
+            } else {
+                cache.put(in, 0);
+                return 5;
+            }
+        }
+    }
+}
+</code></pre>
+
+    </main>
+  </body>
+</html>

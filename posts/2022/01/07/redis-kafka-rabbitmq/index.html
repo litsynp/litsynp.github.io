@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>[TIR] Redis vs Kafka vs RabbitMQ</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>[TIR] Redis vs Kafka vs RabbitMQ</h1>
+    </header>
+
+    <main>
+      <h1>Today I Read</h1>
+<h2>Link</h2>
+<p>https://blog.devgenius.io/redis-vs-kafka-vs-rabbitmq-e935ebbc7ec</p>
+<h2>What I Learned</h2>
+<ul>
+<li>Means of communictaion between microservices: sync. and async.
+<ul>
+<li><strong>REST</strong> for sync.</li>
+<li><strong>MQ</strong> for async.</li>
+</ul>
+</li>
+<li>Considerations for choosing the right MQ:
+<ul>
+<li><strong>Broker scale</strong>: # messages / sec.</li>
+<li><strong>Data persistency</strong>: the ability to recover messages</li>
+<li><strong>Consumer capability</strong>: Capability for 1:1 or 1:N</li>
+</ul>
+</li>
+<li>Different message brokers and their purposes
+<ul>
+<li>RabbitMQ (AMQP) for <strong>complex routing</strong></li>
+<li>Kafka for <strong>large amounts of data</strong></li>
+<li>Redis for <strong>short-lived messages</strong></li>
+</ul>
+</li>
+</ul>
+
+    </main>
+  </body>
+</html>

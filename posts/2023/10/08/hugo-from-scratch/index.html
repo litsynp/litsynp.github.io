@@ -1,6 +1,76 @@
-<!doctype html><html lang=en><head><title>Hugo 블로그 만들기 &ndash; litsynp.log</title>
-<meta name=description content><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=UTF-8><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin=anonymous><link rel=stylesheet href=https://blog.litsynp.com/css/palettes/base16-dark.css><link rel=stylesheet href=https://blog.litsynp.com/css/risotto.css><link rel=stylesheet href=https://blog.litsynp.com/css/custom.css><link rel=icon href=https://blog.litsynp.com/favicon.ico></head><body><div class=page><header class=page__header><nav class="page__nav main-nav"><ul><h1 class=page__logo><a href=https://blog.litsynp.com/ class=page__logo-inner>litsynp.log</a></h1><li class=main-nav__item><a class=nav-main-item href=https://blog.litsynp.com/posts title>posts</a></li><li class=main-nav__item><a class=nav-main-item href=https://blog.litsynp.com/tags title>tags</a></li><li class=main-nav__item><a class=nav-main-item href=https://blog.litsynp.com/categories title>categories</a></li><li class=main-nav__item><a class=nav-main-item href=https://blog.litsynp.com/series title>series</a></li></ul></nav></header><section class=page__body><header class=content__header><h1>Hugo 블로그 만들기</h1></header><aside></aside><div class=content__body><h2 id=about>About</h2><p><a href=https://gohugo.io/about/what-is-hugo/>Hugo는 Go로 만든 정적 사이트 제너레이터</a>이다.</p><p>GitHub Pages로 블로그를 만들기 위해 보통 <a href=https://jekyllrb.com/>Jekyll</a> 또는 <a href=https://gohugo.io/>Hugo</a>를 사용하는데, Hugo가 더 빠르고 사용 경험도 좋다고 해서 Hugo로 만들었던 전적이 있다.</p><p>물론 직접 만들어도 되지만, 다른 것 개발하기도 바쁘고 블로그 글 작성하기도 바빠서 그냥 잘 만들어진 엔진을 사용했다.</p><p>블로그 자체는 2021년에 만들었는데, 2023년부터 블로그를 재정비하면서 또 한번 어려움을 겪고 난 뒤 한 번 정리해보려고 한다.</p><h2 id=hugo-사용법>Hugo 사용법</h2><p>설치는 <a href=https://gohugo.io/installation/>여기</a>를 참고하자.</p><p>그 외 자주 쓰는 사용법은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ hugo new posts/게시글-URL.md
-</span></span></code></pre></div><p>로컬에서 테스트하려면 다음과 같이 하면 된다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ hugo server
-</span></span></code></pre></div><p>보통 Hugo를 사용할 땐 처음부터 만들기보단 테마를 깔아서 사용하는 경우가 많다. 테마는 <a href=https://themes.gohugo.io/>여기</a>에서 찾을 수 있다.</p><p>테마를 사용할 땐 <code>themes/</code> 경로에 작성하게 되며, 커스텀 설정을 주로 <code>config.toml</code> 또는 <code>config.yaml</code>에 작성하게 된다.</p><p>레이아웃 등 커스텀 페이지 설정은 <code>layouts</code>을 사용하는데, 사용하는 테마의 <code>layouts</code>을 참고하면 된다.</p><p>나 같은 경우에는 <a href=https://github.com/joeroe/risotto>risotto</a> 테마를 사용했는데, risotto theme에는 comment 기능이 없고 글씨 크기가 너무 균일해서 밋밋하기에 <a href=https://github.com/litsynp/risotto>fork를 떠서</a> 직접 수정했다.</p><p>이처럼 직접 수정해야 하는 경우에도 fork를 떠서 수정이 가능하다.</p><h2 id=댓글-기능-추가>댓글 기능 추가</h2><p>Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.</p><p>근데 사용하는 theme에 따라 댓글을 넣기 위한 기능이 없는 경우도 있다. 내가 쓰는 테마인 risotto는 댓글 기능이 없어서 직접 만들어야 했다.</p><p>댓글 기능은 <a href=https://disqus.com/>Disqus</a>, <a href=https://utteranc.es/>utterances</a> 등 여러가지가 있는데, 나는 utterances를 사용했다.</p><p>이유는 GitHub issues와 연동이 되고 광고가 없기 때문이다.</p><p>둘다 theme에서 지원만 된다면 추가는 쉬우니 구글을 참고하자. 보통 .html 파일을 추가하고 <code>layouts</code>에서 include하면 된다. 일부 theme에는 단순히 <code>config</code> 파일에서 키-밸류만 추가해도 되는 경우도 있다.</p><h2 id=도메인-등록>도메인 등록</h2><p>도메인 등록은 가장 싼 곳에서 등록하면 된다.</p><p>국내 서비스로는 <a href=https://www.gabia.com/>가비아</a>, <a href=https://www.hosting.kr/>호스팅KR</a> 등이 있다.</p><p>블로그 찾아보면 충분히 설명이 많으니 이 부분은 생략한다.</p><h2 id=google-analytics-등록>Google Analytics 등록</h2><p>이 부분은 그렇게 어렵지 않다. Hugo 자체에서 지원하는데, <code>config.toml</code>에 다음과 같이 작성하면 된다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml><span style=display:flex><span><span style=color:#a6e22e>googleAnalytics</span> = <span style=color:#e6db74>&#34;UA-XXXXXXXXX-X&#34;</span>
-</span></span></code></pre></div><h2 id=google-search-console-등록>Google Search Console 등록</h2><p>Google SEO를 위해서는 Google Search Console에 등록하는 것이 좋다.</p><p>Google Search Console 등록은 꽤나 까다로운데:</p><ol><li>도메인의 소유권을 확인한다. TXT 레코드를 도메인 서비스에서 DNS로 등록하거나, HTML 파일을 <code>static/</code> 경로에 넣으면 된다.</li><li>인덱싱이 완료될 때까지 기다린다.</li><li><code>sitemap.xml</code>을 등록한다.</li></ol><p>yaml 파일로 작성하는 경우에는 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>googleAnalytics</span>: <span style=color:#ae81ff>UA-XXXXXXXXX-X</span>
-</span></span></code></pre></div><p>Naver 등 다른 검색 엔진에 등록하는 법은 아티클 최하단 <strong>References</strong>를 참고하자.</p><h2 id=마치며>마치며</h2><p>개발 블로그를 만들 생각이 있다면 Hugo를 100%는 아니더라도 고려해볼만 하다.</p><p>혼자 처음부터 만드려면 page navigation부터 시작해서 최적화, analytics, SEO 등 고려할 것들이 많은데, Hugo를 사용하면 이런 것들을 많이 신경쓰지 않아도 어느 정도 해결이 된다.</p><h2 id=links>Links</h2><ul><li><a href=https://gohugo.io/>Hugo</a></li><li><a href=https://themes.gohugo.io/>Hugo Themes</a></li></ul><h2 id=references>References</h2><ul><li><a href=https://kimmj.github.io/hugo/google-analytics/>Hugo에 Google Analytics 적용하기</a></li><li><a href=https://ence2.github.io/2020/11/hugo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89-%EC%97%94%EC%A7%84%EC%97%90-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/>Hugo 블로그 검색 엔진에 등록하기</a></li></ul></div><footer class=content__footer></footer></section><section class=page__aside><div class=aside__about><div class=aside__about><h1 class=about__title>litsynp.log</h1></div><ul class=aside__social-links><li><a href=https://www.github.com/litsynp rel=me aria-label=GitHub title=GitHub><i class="fa-brands fa-github" aria-hidden=true></i></a>&nbsp;</li><li><a href=https://www.linkedin.com/in/litsynp rel=me aria-label=LinkedIn title=LinkedIn><i class="fa-brands fa-linkedin" aria-hidden=true></i></a>&nbsp;</li><li><a href=https://docs.litsynp.com rel=me aria-label=GitBook title=GitBook><i class="fa fa-book" aria-hidden=true></i></a>&nbsp;</li><li><a href=mailto:nocte55is@gmail.com rel=me aria-label=Email title=Email><i class="fa-solid fa-envelope" aria-hidden=true></i></a>&nbsp;</li></ul><section><div>Latest Posts:</div><li><a href=https://blog.litsynp.com/posts/2024/07/28/weird-chars-on-macos/>맥북에서 한글 입력 시 알 수 없는 문자가 같이 입력되는 버그</a></li><li><a href=https://blog.litsynp.com/posts/2023/10/10/flip-flops-and-latches/>Flip-Flops and Latches</a></li><li><a href=https://blog.litsynp.com/posts/2023/10/08/hugo-from-scratch/>Hugo 블로그 만들기</a></li></section></div><hr><div class=aside__content><p>2023-10-07</p><hr>On this page:<nav id=TableOfContents><ol><li><a href=#about>About</a></li><li><a href=#hugo-사용법>Hugo 사용법</a></li><li><a href=#댓글-기능-추가>댓글 기능 추가</a></li><li><a href=#도메인-등록>도메인 등록</a></li><li><a href=#google-analytics-등록>Google Analytics 등록</a></li><li><a href=#google-search-console-등록>Google Search Console 등록</a></li><li><a href=#마치며>마치며</a></li><li><a href=#links>Links</a></li><li><a href=#references>References</a></li></ol></nav></div></section><section class=page__comments><script src=https://utteranc.es/client.js repo=litsynp/litsynp.github.io issue-term=pathname theme=github-dark crossorigin=anonymous async></script></section><footer class=page__footer><p><br><span class=active>$ echo $LANG<br><b>English</b></span><br></p><br><br><p class=copyright>© <a href=https://github.com/litsynp>litsynp</a>.</p><p class=advertisement>Powered by <a href=https://gohugo.io/>hugo</a> and <a href=https://github.com/joeroe/risotto>risotto</a>.</p></footer></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hugo 블로그 만들기</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Hugo 블로그 만들기</h1>
+    </header>
+
+    <main>
+      <h2>About</h2>
+<p><a href="https://gohugo.io/about/what-is-hugo/">Hugo는 Go로 만든 정적 사이트 제너레이터</a>이다.</p>
+<p>GitHub Pages로 블로그를 만들기 위해 보통 <a href="https://jekyllrb.com/">Jekyll</a> 또는 <a href="https://gohugo.io/">Hugo</a>를 사용하는데, Hugo가 더 빠르고 사용 경험도 좋다고 해서 Hugo로 만들었던 전적이 있다.</p>
+<p>물론 직접 만들어도 되지만, 다른 것 개발하기도 바쁘고 블로그 글 작성하기도 바빠서 그냥 잘 만들어진 엔진을 사용했다.</p>
+<p>블로그 자체는 2021년에 만들었는데, 2023년부터 블로그를 재정비하면서 또 한번 어려움을 겪고 난 뒤 한 번 정리해보려고 한다.</p>
+<h2>Hugo 사용법</h2>
+<p>설치는 <a href="https://gohugo.io/installation/">여기</a>를 참고하자.</p>
+<p>그 외 자주 쓰는 사용법은 다음과 같다.</p>
+<pre><code class="language-bash">$ hugo new posts/게시글-URL.md
+</code></pre>
+<p>로컬에서 테스트하려면 다음과 같이 하면 된다.</p>
+<pre><code class="language-bash">$ hugo server
+</code></pre>
+<p>보통 Hugo를 사용할 땐 처음부터 만들기보단 테마를 깔아서 사용하는 경우가 많다. 테마는 <a href="https://themes.gohugo.io/">여기</a>에서 찾을 수 있다.</p>
+<p>테마를 사용할 땐 <code>themes/</code> 경로에 작성하게 되며, 커스텀 설정을 주로 <code>config.toml</code> 또는 <code>config.yaml</code>에 작성하게 된다.</p>
+<p>레이아웃 등 커스텀 페이지 설정은 <code>layouts</code>을 사용하는데, 사용하는 테마의 <code>layouts</code>을 참고하면 된다.</p>
+<p>나 같은 경우에는 <a href="https://github.com/joeroe/risotto">risotto</a> 테마를 사용했는데, risotto theme에는 comment 기능이 없고 글씨 크기가 너무 균일해서 밋밋하기에 <a href="https://github.com/litsynp/risotto">fork를 떠서</a> 직접 수정했다.</p>
+<p>이처럼 직접 수정해야 하는 경우에도 fork를 떠서 수정이 가능하다.</p>
+<h2>댓글 기능 추가</h2>
+<p>Hugo는 템플릿 기능이 있어서 댓글 기능을 추가하기가 쉽다.</p>
+<p>근데 사용하는 theme에 따라 댓글을 넣기 위한 기능이 없는 경우도 있다. 내가 쓰는 테마인 risotto는 댓글 기능이 없어서 직접 만들어야 했다.</p>
+<p>댓글 기능은 <a href="https://disqus.com/">Disqus</a>, <a href="https://utteranc.es/">utterances</a> 등 여러가지가 있는데, 나는 utterances를 사용했다.</p>
+<p>이유는 GitHub issues와 연동이 되고 광고가 없기 때문이다.</p>
+<p>둘다 theme에서 지원만 된다면 추가는 쉬우니 구글을 참고하자. 보통 .html 파일을 추가하고 <code>layouts</code>에서 include하면 된다. 일부 theme에는 단순히 <code>config</code> 파일에서 키-밸류만 추가해도 되는 경우도 있다.</p>
+<h2>도메인 등록</h2>
+<p>도메인 등록은 가장 싼 곳에서 등록하면 된다.</p>
+<p>국내 서비스로는 <a href="https://www.gabia.com/">가비아</a>, <a href="https://www.hosting.kr/">호스팅KR</a> 등이 있다.</p>
+<p>블로그 찾아보면 충분히 설명이 많으니 이 부분은 생략한다.</p>
+<h2>Google Analytics 등록</h2>
+<p>이 부분은 그렇게 어렵지 않다. Hugo 자체에서 지원하는데, <code>config.toml</code>에 다음과 같이 작성하면 된다.</p>
+<pre><code class="language-toml">googleAnalytics = &quot;UA-XXXXXXXXX-X&quot;
+</code></pre>
+<h2>Google Search Console 등록</h2>
+<p>Google SEO를 위해서는 Google Search Console에 등록하는 것이 좋다.</p>
+<p>Google Search Console 등록은 꽤나 까다로운데:</p>
+<ol>
+<li>도메인의 소유권을 확인한다. TXT 레코드를 도메인 서비스에서 DNS로 등록하거나, HTML 파일을 <code>static/</code> 경로에 넣으면 된다.</li>
+<li>인덱싱이 완료될 때까지 기다린다.</li>
+<li><code>sitemap.xml</code>을 등록한다.</li>
+</ol>
+<p>yaml 파일로 작성하는 경우에는 다음과 같다.</p>
+<pre><code class="language-yaml">googleAnalytics: UA-XXXXXXXXX-X
+</code></pre>
+<p>Naver 등 다른 검색 엔진에 등록하는 법은 아티클 최하단 <strong>References</strong>를 참고하자.</p>
+<h2>마치며</h2>
+<p>개발 블로그를 만들 생각이 있다면 Hugo를 100%는 아니더라도 고려해볼만 하다.</p>
+<p>혼자 처음부터 만드려면 page navigation부터 시작해서 최적화, analytics, SEO 등 고려할 것들이 많은데, Hugo를 사용하면 이런 것들을 많이 신경쓰지 않아도 어느 정도 해결이 된다.</p>
+<h2>Links</h2>
+<ul>
+<li><a href="https://gohugo.io/">Hugo</a></li>
+<li><a href="https://themes.gohugo.io/">Hugo Themes</a></li>
+</ul>
+<h2>References</h2>
+<ul>
+<li><a href="https://kimmj.github.io/hugo/google-analytics/">Hugo에 Google Analytics 적용하기</a></li>
+<li><a href="https://ence2.github.io/2020/11/hugo-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89-%EC%97%94%EC%A7%84%EC%97%90-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0/">Hugo 블로그 검색 엔진에 등록하기</a></li>
+</ul>
+
+    </main>
+  </body>
+</html>

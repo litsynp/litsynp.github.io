@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</h1>
+    </header>
+
+    <main>
+      <h1>프로그래머스에서 정답이 맞는데 아무리 해도 Test Case에서 오류나는 경우</h1>
+<p>프로그래머스에서 문제를 푸는데 아무리 해도 정답이 맞지 않는 경우가 있다.</p>
+<p>그건 어쩌면 logic이 틀린게 아니라 변수 초기화 시점이 잘못됐을 수도 있다.</p>
+<p>static을 이용해 전역으로 설정하고 있었다면,</p>
+<p><a href="https://programmers.co.kr/questions/13442">참고</a>를 보면 <code>answer = 0</code> 초기화를 선언 시가 아닌 <strong>solution 안에서 진행해야</strong> 테스트케이스 오류가 나지 않음을 알 수 있다.</p>
+<p>추측으로는 이전의 테스트 케이스 진행 중 <code>answer</code> 의 값이 이전 테스트 케이스에서 영향을 받은 걸지도 모르겠다.</p>
+<p>이런 식으로 실전에서 맞아야 할 몇 문제를 더 틀렸을 수도 있었을 것 같다...</p>
+<p>주의 해야겠다!</p>
+
+    </main>
+  </body>
+</html>

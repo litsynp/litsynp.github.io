@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>[프로그래머스][Level 2][#17686] 파일명 정렬 해설</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>[프로그래머스][Level 2][#17686] 파일명 정렬 해설</h1>
+    </header>
+
+    <main>
+      <h2>About</h2>
+<ul>
+<li><strong>사이트</strong>: 프로그래머스</li>
+<li><strong>이름</strong>: [3차] 파일명 정렬</li>
+<li><strong>수준</strong>: LEVEL 2</li>
+<li><strong>유형</strong>: 문자열</li>
+<li><strong>출제</strong>: 2018 KAKAO BLIND RECRUITMENT</li>
+<li><strong>주소</strong>: https://programmers.co.kr/learn/courses/30/lessons/17686</li>
+</ul>
+<h2>해설</h2>
+<p>정규표현식을 잘 구글링해서 풀었다. 솔직히 깔끔한 방법은 아니다.</p>
+<p><code>(?&lt;=\\D)(?=\\d)</code>라는 정규표현식으로 숫자가 아닌 문자열과 숫자로 시작하는 문자열을 나눈다.</p>
+<p>숫자로 시작하는 문자열은 다시 <code>\\d+</code>로 숫자만 걸러준다. 그 외의 부분은 버려도 좋다.</p>
+<p>* 참고로, <code>matcher.group()</code>를 사용하면 match 결과 전체를 준다. 그룹을 지정했다면 매개변수로 그룹의 숫자를 넣어주면 된다.</p>
+<p>그렇게 <code>List</code>에 하나씩 <code>add</code> 해주고, 나중에 정렬을 진행해 순서대로 반환한다.</p>
+<p>정렬 기준은 클래스에서 <code>Comparable</code> 인터페이스를 <code>implement</code> 하고 <code>compareTo</code>를 오버라이딩하였다. 문제의 정의대로 순서대로 비교해주면 된다.</p>
+<h2>코드</h2>
+<p><a href="https://github.com/litsynp/ps-java/blob/main/app/src/main/java/psjava/programmers/challenges/level2/Q17686.java">GitHub</a></p>
+<pre><code class="language-java">import java.util.*;
+import java.util.regex.*;
+
+public class Q17686 {
+
+    public String[] solution(String[] files) {
+        List&lt;Node&gt; list = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; files.length; i++) {
+            String[] part = files[i].split(&quot;(?&lt;=\\D)(?=\\d)&quot;);
+
+            String head = part[0];
+            String number = &quot;&quot;;
+            Pattern pattern = Pattern.compile(&quot;\\d+&quot;);
+            Matcher matcher = pattern.matcher(part[1]);
+            if (matcher.find()) {
+                number = matcher.group();
+            }
+
+            Node node = new Node(i, files[i], head, number);
+            list.add(node);
+        }
+
+        Collections.sort(list);
+        return list.stream().map(n -&gt; n.orig).toArray(String[]::new);
+    }
+
+    static class Node implements Comparable&lt;Node&gt; {
+        int idx;
+        String orig;
+        String head;
+        String number;
+
+        @Override
+        public String toString() {
+            return &quot;Node{&quot; +
+                    &quot;idx=&quot; + idx +
+                    &quot;, head='&quot; + head + '\'' +
+                    &quot;, number='&quot; + number + '\'' +
+                    '}';
+        }
+
+        public Node(int idx, String orig, String head, String number) {
+            this.idx = idx;
+            this.orig = orig;
+            this.head = head.toLowerCase();
+            this.number = number;
+        }
+
+        @Override
+        public int compareTo(Node o) {
+            int order1 = this.head.compareTo(o.head);
+            if (order1 != 0) {
+                return order1;
+            }
+
+            int i1 = Integer.parseInt(this.number);
+            int i2 = Integer.parseInt(o.number);
+            int order2 = Integer.compare(i1, i2);
+            if (order2 != 0) {
+                return order2;
+            }
+
+            return Integer.compare(this.idx, o.idx);
+        }
+    }
+}
+</code></pre>
+
+    </main>
+  </body>
+</html>
