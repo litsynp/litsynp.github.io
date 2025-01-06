@@ -6,6 +6,7 @@ categories: ["tips"]
 tags: ["Django REST Framework"]
 series: ["Django REST Framework 팁"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/148346764-0e23e2c9-6acc-4c17-9b93-b11ca28db148.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## 문제

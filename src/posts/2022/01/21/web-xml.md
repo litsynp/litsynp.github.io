@@ -4,7 +4,9 @@ date: 2022-01-21T23:50:40-08:00
 draft: false
 categories: ["today-i-read"]
 tags: ["Spring"]
+series: ["Today I Read"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/150630882-6a9a3648-b603-48c7-befc-4be6f66a84e7.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 # Today I Read

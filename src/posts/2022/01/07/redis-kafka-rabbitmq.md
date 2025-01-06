@@ -4,7 +4,9 @@ date: 2022-01-07T23:38:42-08:00
 draft: false
 categories: ["today-i-read"]
 tags: ["Message Queue", "Kafka", "RabbitMQ", "Redis"]
+series: ["Today I Read"]
 featuredImage: "https://tsh.io/wp-content/uploads/2021/04/message-broker-example-4_.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 # Today I Read

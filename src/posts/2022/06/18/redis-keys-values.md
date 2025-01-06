@@ -5,7 +5,9 @@ draft: false
 summary: Some notes about Redis keys and values from Redis docs.
 categories: ["today-i-read"]
 tags: ["Redis"]
+series: ["Today I Read"]
 featuredImage: "https://dwglogo.com/wp-content/uploads/2017/12/1100px_Redis_Logo_01.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## Keys

@@ -6,6 +6,7 @@ categories: ["problem-solved"]
 tags: ["Spring", "Spring Boot", "Swagger"]
 series: ["Spring 알아보기"]
 featuredImage: "https://www.scottbrady91.com/img/logos/swagger-banner.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## 문제

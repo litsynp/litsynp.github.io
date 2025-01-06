@@ -2,14 +2,12 @@
 title: "클린 코더 (The Clean Coder) 독서 - 1"
 date: 2022-05-27T23:02:28+09:00
 draft: false
-categories: ["today-i-read"]
-tags: ["code"]
+categories: ["books"]
+tags: ["books"]
 series: ["독서 - 클린 코더"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/170722855-8496b4ec-2817-4e33-b73b-d7fe2cbc8a78.png"
 eleventyExcludeFromCollections: true
 ---
-
-# 클린 코더 (The Clean Coder) 독서 - 1
 
 ## 음악 들으면서
 

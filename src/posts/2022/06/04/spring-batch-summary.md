@@ -6,6 +6,7 @@ categories: ["Spring Batch"]
 tags: ["Spring", "Spring Batch"]
 series: ["Spring 알아보기"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/172010391-6e903327-fcce-4eb8-8610-5ddc51767735.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 # 배치 개발 시나리오

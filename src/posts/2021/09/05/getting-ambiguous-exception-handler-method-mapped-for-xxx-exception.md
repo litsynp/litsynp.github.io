@@ -6,6 +6,7 @@ categories: ["problem-solved"]
 tags: ["Spring"]
 series: ["Spring 알아보기"]
 featuredImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## 문제

@@ -6,6 +6,7 @@ categories: ["problem-solved"]
 tags: ["Spring"]
 series: ["Spring 알아보기"]
 featuredImage: "https://blog.jetbrains.com/kotlin/files/2020/02/kotlin_blog_gradle_ide.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 # Spring REST Docs 설정하기

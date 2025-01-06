@@ -4,7 +4,9 @@ date: 2022-02-12T11:28:52-08:00
 draft: false
 categories: ["Java"]
 tags: ["Java"]
+series: ["Java"]
 featuredImage: "https://stackify.com/wp-content/uploads/2017/05/Java-Garbage-Collection.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 # Garbage Collection

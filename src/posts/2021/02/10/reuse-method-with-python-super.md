@@ -6,6 +6,7 @@ categories: ["tips"]
 tags: ["Django REST Framework", "python"]
 series: ["Django REST Framework 팁"]
 featuredImage: "https://www.django-rest-framework.org/img/logo.png"
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## Why use it?
