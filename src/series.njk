@@ -1,0 +1,26 @@
+---
+title: Series
+layout: "base.njk"
+---
+
+<div class="heading">Series</div>
+<hr>
+
+<ul class="postlist">
+  {%- for series in collections.series %}
+
+    <li>
+      {{ series.title }}
+      <ol>
+        {%- for post in series.posts %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {%- endfor %}
+      </ol>
+    </li>
+
+    <br>
+
+  {%- endfor %}
+</ul>
