@@ -15,54 +15,6 @@ body {
   color: #000;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000;
-    color: #fff;
-  }
-
-  .header a:link {
-    color: #fff;
-  }
-
-  /* visited link */
-  .header a:visited {
-    color: #fff;
-  }
-
-  /* mouse over link */
-  .header a:hover {
-    color: #fff;
-  }
-
-  /* selected link */
-  .header a:active {
-    color: #fff;
-  }
-
-  /* ========== LINKS ========== */
-  /* unvisited link */
-  a:link {
-    color: #fff;
-  }
-
-  /* visited link */
-  a:visited {
-    color: #fff;
-  }
-
-  /* mouse over link */
-  a:hover {
-    color: #fff;
-  }
-
-  /* selected link */
-  a:active {
-    color: #fff;
-  }
-  /* ========== /LINKS ========== */
-}
-
 html {
   display: block;
 }
@@ -80,6 +32,36 @@ body {
 
   padding-left: 2%;
   padding-right: 2%;
+}
+
+h1::before {
+  content: "# ";
+  opacity: 0.5;
+}
+
+h2::before {
+  content: "## ";
+  opacity: 0.5;
+}
+
+h3::before {
+  content: "### ";
+  opacity: 0.5;
+}
+
+h4::before {
+  content: "#### ";
+  opacity: 0.5;
+}
+
+h5::before {
+  content: "##### ";
+  opacity: 0.5;
+}
+
+h6::before {
+  content: "###### ";
+  opacity: 0.5;
 }
 
 .heading {
@@ -218,53 +200,57 @@ blockquote {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: #fff;
+    color: #e8e8e8;
   }
 
   .header a:link {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* visited link */
   .header a:visited {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* mouse over link */
   .header a:hover {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* selected link */
   .header a:active {
-    color: #fff;
+    color: #e8e8e8;
+  }
+
+  img {
+    border: 1px solid #e8e8e8;
   }
 
   /* ========== LINKS ========== */
   /* unvisited link */
   a:link {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* visited link */
   a:visited {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* mouse over link */
   a:hover {
-    color: #fff;
+    color: #e8e8e8;
   }
 
   /* selected link */
   a:active {
-    color: #fff;
+    color: #e8e8e8;
   }
   /* ========== /LINKS ========== */
 
   code {
     background-color: #333;
-    color: #fff;
+    color: #e8e8e8;
   }
   pre:has(> code) {
     background-color: #000;
@@ -272,11 +258,7 @@ blockquote {
   /* ========== /CODE ========== */
 
   blockquote {
-    border: 1px solid #000;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-left: 10px solid #000;
+    border: 1px solid #e8e8e8;
+    border-left: 10px solid #e8e8e8;
   }
 }
