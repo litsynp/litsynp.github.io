@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Go에서 서버 개발에 필요한 마이그레이션 스크립트 작성하기</title>
+    <title>Go에서 서버 개발에 필요한 마이그레이션 스크립트 작성하기 :: litsynp.log</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -34,13 +34,18 @@
             <nav>
               <a href="/">About</a>
               <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
             </nav>
           </div>
         </center>
       </header>
 
       <main>
-        <h2>개요</h2>
+        
+  <h1>Go에서 서버 개발에 필요한 마이그레이션 스크립트 작성하기</h1>
+  <time class="postlist-date" datetime="10/27/2023">10/27/2023</time>
+  <hr>
+  <h2>개요</h2>
 <p>최근 Go를 이용해 백엔드 서버를 작성하고 있는데요. 서버를 개발하다 보면 데이터베이스의 스키마가 달라진다던가, enum의 성격을 가진 셋업 데이터를 DB로 불러온다던가, 아니면 대량의 데이터를 한번에 DB로 로드하는 등 다양한 상황을 직면하게 됩니다.</p>
 <p>이런 상황에서 통상적으로 스크립트를 작성하여 일련의 작업을 수행하도록 하는데, 이걸 저는 “마이그레이션 스크립트”라고 부르곤 합니다.</p>
 <p>특히 이미 배포를 나간 서버에서는 스크립트를 통해 데이터를 불러오면 좀 더 편리하게 데이터를 불러올 수 있습니다.</p>
@@ -388,6 +393,7 @@ func parseRow(row *sheets.RowData) Row {
 </ul>
 <p>심심하면 제 GitHub도 놀러오세요: <a href="https://github.com/litsynp">https://github.com/litsynp</a></p>
 <p>읽어주셔서 감사합니다!</p>
+
 
       </main>
     </div>

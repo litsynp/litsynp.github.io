@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>[Python] super() 이용해서 기존 메소드 이용하기</title>
+    <title>[Python] super() 이용해서 기존 메소드 이용하기 :: litsynp.log</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -34,13 +34,18 @@
             <nav>
               <a href="/">About</a>
               <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
             </nav>
           </div>
         </center>
       </header>
 
       <main>
-        <h2>Why use it?</h2>
+        
+  <h1>[Python] super() 이용해서 기존 메소드 이용하기</h1>
+  <time class="postlist-date" datetime="02/09/2021">02/09/2021</time>
+  <hr>
+  <h2>Why use it?</h2>
 <p>프로젝트에서 <strong>Django REST Framework</strong>를 사용하고 있는데, <code>serializer</code>나 <code>viewset</code>을 사용할 때, 특히 <code>ModelViewSet</code> 을 override할 때 HTTP 메소드에 따른 함수를 수정하고 싶을 때가 있다.</p>
 <p>그럴 때 특정 분기에 따라 override하기 전의 클래스 메소드를 사용하고 싶은 때가 있다.</p>
 <p>예시는 다음과 같다.</p>
@@ -74,6 +79,7 @@ def destroy(self, request, *args, **kwargs):
 </ul>
 <h2>REF</h2>
 <p><a href="https://stackoverflow.com/questions/1817183/using-super-with-a-class-method">Using super with a class method - (Stack Overflow)</a></p>
+
 
       </main>
     </div>

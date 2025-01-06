@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>1장 리팩터링: 첫 번째 예시 :: litsynp.log</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
+  </head>
+
+  <body>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
+            </nav>
+          </div>
+        </center>
+      </header>
+
+      <main>
+        
+  <h1>1장 리팩터링: 첫 번째 예시</h1>
+  <time class="postlist-date" datetime="02/03/2023">02/03/2023</time>
+  <hr>
+  <h3>Key Points</h3>
+<ul>
+<li>리팩터링하기 전에 제대로 된 테스트부터 마련한다. 테스트는 반드시 자가진단하도록 만든다.
+<ul>
+<li>이후는 <strong>컴파일-테스트-커밋</strong>의 반복이다.</li>
+<li>매우 작은 단위(변수/함수 이동, 분리, 삭제 등)로 반복한다.</li>
+</ul>
+</li>
+<li>프로그램 수정을 작은 단계로 나눠서 진행한다.</li>
+<li>설사 심각하게 느려지더라도 제대로 리팩터링된 코드베이스는 그렇지 않은 코드보다 성능을 개선하기가 훨씬 수월하다.</li>
+<li>거의 항상 지역변수부터 제거한다.
+<ul>
+<li>&quot;변수 인라인하기&quot;를 자주 활용하자.</li>
+</ul>
+</li>
+<li>이름이 좋으면 함수 본문을 읽지 않고도 무슨 일을 하는지 알 수 있다.
+<ul>
+<li>처음에는 당장 떠오르는 최선의 이름을 사용하다가, 나중에 더 좋은 이름이 떠오를 때 바꾸는 식이 좋다.</li>
+</ul>
+</li>
+<li>리팩터링과 기능 추가 사이의 균형을 맞출 때 이것을 기억하자.
+<ul>
+<li><strong>&quot;항시 코드베이스를 작업하기 전보다 더 건강하게 고친다&quot;</strong></li>
+</ul>
+</li>
+</ul>
+<h3>Details</h3>
+<ul>
+<li>가변(mutable) 데이터는 금방 상하기 때문에 데이터를 최대한 불변(immutable)으로 취급하자.
+<ul>
+<li>e.g., <code>result = Object.assign({}, aPerformance)</code></li>
+</ul>
+</li>
+<li>반복문(<code>for</code>...)을 파이프라인(<code>reduce</code>, <code>map</code>, ...)으로 바꾸는 것도 좋다.</li>
+<li>다음 리팩터링 기법을 잘 활용하자.
+<ul>
+<li>함수 추출하기 (6.1절)</li>
+<li>변수 인라인하기 (6.4절)</li>
+<li>함수 옮기기 (8.1절)</li>
+<li>조건부 로직을 다형성으로 바꾸기 (10.4절)</li>
+</ul>
+</li>
+</ul>
+<h3>조건부 로직 - 다형성으로 변경</h3>
+<ul>
+<li>조건부 로직을 다형성으로 바꿀 수 있다. (JS의 경우 ES6부터 객체지향을 사용하기 좋아졌다.)</li>
+<li>클래스에 로직을 담았다면 다형성을 지원하자.
+<ul>
+<li>가장 먼저 할 일은 타입 코드 대신 서브클래스를 사용하도록 변경하는 것이다.</li>
+<li>JS는 생성자가 서브클래스의 인스턴스를 반환할 수 없다. 대신 <strong>생성자를 팩터리 함수로 바꾸기</strong>를 적용할 수 있다. (<code>switch</code>, <code>case</code> 이용)</li>
+</ul>
+</li>
+<li>JS는 게터 메소드를 호출하는 코드와 일반적인 데이터 접근 코드의 모양이 똑같은 장점이 있다. (<code>calculator.amount</code> 코드가 <code>get amount()</code> 게터 메서드를 호출하도록 하면 된다.)</li>
+</ul>
+<h3>리팩터링</h3>
+<p>리팩터링은 코드가 하는 일을 파악하는 데서 시작한다.</p>
+<p>코드를 읽고, 개선점을 찾고, 리팩터링 작업을 통해 개선점을 코드에 반영한다.</p>
+<p>그 결과 코드가 명확해지고 이해하기 더 쉬워진다.</p>
+<p>그러면 또 다른 개선점이 떠오르며 선순환이 형성된다.</p>
+<h3>좋은 코드</h3>
+<blockquote>
+<p>좋은 코드를 가늠하는 확실한 방법은 '<strong>얼마나 수정하기 쉬운가</strong>'다.</p>
+</blockquote>
+<ul>
+<li>프로그래머 사이에서 어떤 코드가 좋은 코드인지에 대한 의견은 다분하다.</li>
+<li>저자가 선호하는 <strong>'적절한 이름의 작은 함수들'로 만드는 방식</strong>에 반대하는 사람도 있을 것이다.</li>
+</ul>
+<p>하지만 <strong>취향을 넘어서는 관점은 분명 존재</strong>하며, 코드를 '<strong>수정하기 쉬운 정도</strong>'야말로 <strong>좋은 코드를 가늠하는 확실한 방법</strong>이라고 믿는다.</p>
+<ul>
+<li>코드는 명확해야 한다.</li>
+<li>코드를 수정해야 할 상황이 되면 고쳐야 할 곳을 쉽게 찾을 수 있고, 오류 없이 빠르게 수정할 수 있어야 한다.</li>
+<li>건강한 코드베이스는 생산성을 극대화하고, 고객에게 필요한 기능을 더 빠르고 저렴한 비용으로 제공하도록 해준다.</li>
+<li>코드를 건강하게 관리하려면 프로그래밍 팀의 현재와 이상의 차이에 항상 신경 쓰면서, 이상에 가까워지도록 리팩터링해야 한다.</li>
+</ul>
+<h3>리팩터링하는 리듬</h3>
+<ul>
+<li>이 챕터에서 가장 중요한 건 리팩터링하는 리듬이다.
+<ul>
+<li>각 단계를 잘게 나누고 매번 컴파일하고 테스트하여 작동하는 상태로 유지하자.</li>
+</ul>
+</li>
+<li>리팩터링을 효과적으로 하는 핵심은, 단계를 잘게 나눠야 더 빨리 처리할 수 있고, 코드는 절대 깨지지 않으며, 이러한 작은 단계들이 모여서 상당히 큰 변화를 이룰 수 있다는 사실을 깨닫자.</li>
+</ul>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>[DRF] Serializer에 writable non-model field 추가하기</title>
+    <title>[DRF] Serializer에 writable non-model field 추가하기 :: litsynp.log</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -34,13 +34,18 @@
             <nav>
               <a href="/">About</a>
               <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
             </nav>
           </div>
         </center>
       </header>
 
       <main>
-        <h2>문제</h2>
+        
+  <h1>[DRF] Serializer에 writable non-model field 추가하기</h1>
+  <time class="postlist-date" datetime="01/06/2022">01/06/2022</time>
+  <hr>
+  <h2>문제</h2>
 <p><em>Django</em> 및 <em>DRF</em>에서 model에 정의하지 않은 필드를 <strong>POST / PUT용 serializer</strong>에 추가하고 싶을 때가 있다. 그냥 <code>serializers.CharField()</code>로 추가하면 <code>unexpected keyword</code>라고 뜨면서 추가할 수 없는 문제가 발생한다.</p>
 <h2>해결법</h2>
 <p>Serializer에 추가해둔 필드를 <code>validate</code> 메소드에서 <strong>model 생성에 사용되지 않도록</strong> <code>pop()</code> 시켜준다.</p>
@@ -58,6 +63,7 @@
 </code></pre>
 <h2>REF</h2>
 <p><a href="https://stackoverflow.com/questions/28322901/drf-modelserializer-with-a-non-model-write-only-field">Stack Overflow</a></p>
+
 
       </main>
     </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Getting Ambiguous @ExceptionHandler method mapped for XXXException</title>
+    <title>Getting Ambiguous @ExceptionHandler method mapped for XXXException :: litsynp.log</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -34,13 +34,18 @@
             <nav>
               <a href="/">About</a>
               <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
             </nav>
           </div>
         </center>
       </header>
 
       <main>
-        <h2>문제</h2>
+        
+  <h1>Getting Ambiguous @ExceptionHandler method mapped for XXXException</h1>
+  <time class="postlist-date" datetime="09/04/2021">09/04/2021</time>
+  <hr>
+  <h2>문제</h2>
 <hr>
 <p><strong>스프링</strong>에서 <code>@ControllerAdvice</code>를 이용해 <strong>전역 exception handler</strong>를 직접 만들 때, <code>@ExceptionHandler(XXXException.class)</code>를 어노테이션으로 메소드에 달았을 때,</p>
 <pre><code>Getting Ambiguous @ExceptionHandler method mapped for XXXException
@@ -55,6 +60,7 @@
 <h2>REF</h2>
 <hr>
 <p><a href="https://stackoverflow.com/questions/51991992/getting-ambiguous-exceptionhandler-method-mapped-for-methodargumentnotvalidexce">Stack Overflow</a></p>
+
 
       </main>
     </div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>[Spring Boot] External API Call</title>
+    <title>[Spring Boot] External API Call :: litsynp.log</title>
 
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -34,13 +34,18 @@
             <nav>
               <a href="/">About</a>
               <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
             </nav>
           </div>
         </center>
       </header>
 
       <main>
-        <p><code>RestTemplate</code> is commonly used for external API call in Spring.</p>
+        
+  <h1>[Spring Boot] External API Call</h1>
+  <time class="postlist-date" datetime="02/12/2022">02/12/2022</time>
+  <hr>
+  <p><code>RestTemplate</code> is commonly used for external API call in Spring.</p>
 <p>But from Spring 5, <code>WebClient</code> in WebFlux is preferred over <code>RestTemplate</code>.</p>
 <p>First, add this dependency to <code>build.gradle</code>.</p>
 <pre><code class="language-groovy">// build.gradle
@@ -106,6 +111,7 @@ public class ExterrnalApiService {
 <h3>REF</h3>
 <p><a href="https://stackoverflow.com/questions/42365266/call-another-rest-api-from-my-server-in-spring-boot">https://stackoverflow.com/questions/42365266/call-another-rest-api-from-my-server-in-spring-boot</a></p>
 <p><a href="https://bravenamme.github.io/2021/01/07/web_client/">https://bravenamme.github.io/2021/01/07/web_client/</a></p>
+
 
       </main>
     </div>
