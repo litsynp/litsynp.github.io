@@ -112,7 +112,7 @@ export default async function (eleventyConfig) {
 
     // loop over the mapping (`k` is the series title)
     for (const [k, { posts, description, date }] of mapping.entries()) {
-      if (posts.length > 1) {
+      if (posts.length >= 1) {
         // add any series with multiple posts to the new array
         normalized.push({ title: k, posts, description, date });
       }
