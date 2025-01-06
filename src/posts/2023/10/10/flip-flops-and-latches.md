@@ -5,9 +5,10 @@ draft: false
 categories: []
 tags: ["electronics"]
 summary: "Flip-flops와 latches에 대해 알아보자."
-series: []
+series: ["Today I Read"]
 featuredImage: ""
 toc: true
+eleventyExcludeFromCollections: ["posts"]
 ---
 
 ## Flip-Flops and Latches
