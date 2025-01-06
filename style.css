@@ -10,6 +10,59 @@
   }
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .header a:link {
+    color: #fff;
+  }
+
+  /* visited link */
+  .header a:visited {
+    color: #fff;
+  }
+
+  /* mouse over link */
+  .header a:hover {
+    color: #fff;
+  }
+
+  /* selected link */
+  .header a:active {
+    color: #fff;
+  }
+
+  /* ========== LINKS ========== */
+  /* unvisited link */
+  a:link {
+    color: #fff;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #fff;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #fff;
+  }
+
+  /* selected link */
+  a:active {
+    color: #fff;
+  }
+  /* ========== /LINKS ========== */
+}
+
 html {
   display: block;
 }
@@ -160,4 +213,70 @@ blockquote {
   padding-left: 20px;
   padding-right: 20px;
   border-left: 10px solid #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .header a:link {
+    color: #fff;
+  }
+
+  /* visited link */
+  .header a:visited {
+    color: #fff;
+  }
+
+  /* mouse over link */
+  .header a:hover {
+    color: #fff;
+  }
+
+  /* selected link */
+  .header a:active {
+    color: #fff;
+  }
+
+  /* ========== LINKS ========== */
+  /* unvisited link */
+  a:link {
+    color: #fff;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #fff;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #fff;
+  }
+
+  /* selected link */
+  a:active {
+    color: #fff;
+  }
+  /* ========== /LINKS ========== */
+
+  code {
+    background-color: #333;
+    color: #fff;
+  }
+  pre:has(> code) {
+    background-color: #000;
+  }
+  /* ========== /CODE ========== */
+
+  blockquote {
+    border: 1px solid #000;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 10px solid #000;
+  }
 }
