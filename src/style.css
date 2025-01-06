@@ -34,6 +34,36 @@ body {
   padding-right: 2%;
 }
 
+h1::before {
+  content: "# ";
+  opacity: 0.5;
+}
+
+h2::before {
+  content: "## ";
+  opacity: 0.5;
+}
+
+h3::before {
+  content: "### ";
+  opacity: 0.5;
+}
+
+h4::before {
+  content: "#### ";
+  opacity: 0.5;
+}
+
+h5::before {
+  content: "##### ";
+  opacity: 0.5;
+}
+
+h6::before {
+  content: "###### ";
+  opacity: 0.5;
+}
+
 .heading {
   margin-top: 1rem;
 
@@ -170,57 +200,57 @@ blockquote {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000;
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   .header a:link {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* visited link */
   .header a:visited {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* mouse over link */
   .header a:hover {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* selected link */
   .header a:active {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   img {
-    border: 1px solid #E8E8E8;
+    border: 1px solid #e8e8e8;
   }
 
   /* ========== LINKS ========== */
   /* unvisited link */
   a:link {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* visited link */
   a:visited {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* mouse over link */
   a:hover {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
 
   /* selected link */
   a:active {
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
   /* ========== /LINKS ========== */
 
   code {
     background-color: #333;
-    color: #E8E8E8;
+    color: #e8e8e8;
   }
   pre:has(> code) {
     background-color: #000;
@@ -228,7 +258,7 @@ blockquote {
   /* ========== /CODE ========== */
 
   blockquote {
-    border: 1px solid #E8E8E8;
-    border-left: 10px solid #E8E8E8;
+    border: 1px solid #e8e8e8;
+    border-left: 10px solid #e8e8e8;
   }
 }
