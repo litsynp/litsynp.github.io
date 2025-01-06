@@ -10,6 +10,11 @@
   }
 }
 
+body {
+  background-color: #fff;
+  color: #000;
+}
+
 html {
   display: block;
 }
@@ -160,4 +165,70 @@ blockquote {
   padding-left: 20px;
   padding-right: 20px;
   border-left: 10px solid #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #E8E8E8;
+  }
+
+  .header a:link {
+    color: #E8E8E8;
+  }
+
+  /* visited link */
+  .header a:visited {
+    color: #E8E8E8;
+  }
+
+  /* mouse over link */
+  .header a:hover {
+    color: #E8E8E8;
+  }
+
+  /* selected link */
+  .header a:active {
+    color: #E8E8E8;
+  }
+
+  img {
+    border: 1px solid #E8E8E8;
+  }
+
+  /* ========== LINKS ========== */
+  /* unvisited link */
+  a:link {
+    color: #E8E8E8;
+  }
+
+  /* visited link */
+  a:visited {
+    color: #E8E8E8;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: #E8E8E8;
+  }
+
+  /* selected link */
+  a:active {
+    color: #E8E8E8;
+  }
+  /* ========== /LINKS ========== */
+
+  code {
+    background-color: #333;
+    color: #E8E8E8;
+  }
+  pre:has(> code) {
+    background-color: #000;
+  }
+  /* ========== /CODE ========== */
+
+  blockquote {
+    border: 1px solid #E8E8E8;
+    border-left: 10px solid #E8E8E8;
+  }
 }
