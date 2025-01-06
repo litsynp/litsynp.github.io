@@ -6,6 +6,7 @@ summary: " "
 categories: ["problem-solving"]
 tags: ["코딩테스트", "프로그래머스", "자료구조 유형"]
 series: ["코딩테스트 문제풀이"]
+eleventyExcludeFromCollections: true
 ---
 
 ## About
