@@ -2,7 +2,7 @@
 title: "Key Points"
 description: "일종의 노트 개념으로 핵심 포인트만 모아봅니다."
 tags: ["books"]
-series: "가상 면접 사례로 배우는 대규모 시스템 설계 기초 (System Design Interview)"
+series: "system-design-interview"
 date: 2023-01-24T03:23:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

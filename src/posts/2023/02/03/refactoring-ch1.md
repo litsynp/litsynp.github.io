@@ -2,7 +2,7 @@
 title: "1장 리팩터링: 첫 번째 예시"
 description: 변경하기 쉬운 코드로 리팩터링하기
 tags: ["books", "refactoring"]
-series: "리팩터링 2판 (Refactoring: 2nd Ed.)"
+series: "refactoring-2nd"
 date: 2023-02-03T12:31:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

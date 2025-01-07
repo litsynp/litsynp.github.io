@@ -5,7 +5,7 @@ draft: false
 categories: []
 tags: ["electronics"]
 description: "Flip-flops와 latches에 대해 알아보자."
-series: ["Today I Read"]
+series: ["tir"]
 featuredImage: ""
 toc: true
 eleventyExcludeFromCollections: ["posts"]

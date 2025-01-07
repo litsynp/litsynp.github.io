@@ -4,7 +4,7 @@ date: 2021-09-05T01:00:00+09:00
 draft: false
 categories: ["problem-solved"]
 tags: ["Spring", "Spring Boot", "Swagger"]
-series: ["Spring 알아보기"]
+series: ["spring"]
 featuredImage: "https://www.scottbrady91.com/img/logos/swagger-banner.png"
 eleventyExcludeFromCollections: ["posts"]
 ---

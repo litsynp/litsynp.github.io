@@ -2,7 +2,7 @@
 title: "Real Life Systems"
 description: "실세계 대규모 시스템 설계 예시"
 tags: ["books"]
-series: "가상 면접 사례로 배우는 대규모 시스템 설계 기초 (System Design Interview)"
+series: "system-design-interview"
 date: 2023-01-24T21:45:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

@@ -4,7 +4,7 @@ date: 2022-06-04T23:55:52+09:00
 draft: false
 categories: ["Spring Batch"]
 tags: ["Spring", "Spring Batch"]
-series: ["Spring 알아보기"]
+series: ["spring"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/172010391-6e903327-fcce-4eb8-8610-5ddc51767735.png"
 eleventyExcludeFromCollections: ["posts"]
 ---

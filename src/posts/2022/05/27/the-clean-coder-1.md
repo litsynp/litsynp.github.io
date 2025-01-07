@@ -4,7 +4,7 @@ date: 2022-05-27T23:02:28+09:00
 draft: false
 categories: ["books"]
 tags: ["books"]
-series: ["독서 - 클린 코더"]
+series: ["the-clean-coder"]
 featuredImage: "https://user-images.githubusercontent.com/42485462/170722855-8496b4ec-2817-4e33-b73b-d7fe2cbc8a78.png"
 eleventyExcludeFromCollections: true
 ---

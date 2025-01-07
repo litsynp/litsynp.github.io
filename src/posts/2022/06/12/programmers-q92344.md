@@ -3,9 +3,9 @@ title: "[프로그래머스][level 3][#92344] 파괴되지 않은 건물"
 date: 2022-06-12T12:21:17+09:00
 draft: false
 description: " "
-categories: ["problem-solving"]
+categories: ["problem-solving-questions"]
 tags: ["코딩테스트", "프로그래머스", "알고리즘 유형", "누적합"]
-series: ["코딩테스트 문제풀이"]
+series: ["problem-solving-questions"]
 eleventyExcludeFromCollections: true
 ---
 

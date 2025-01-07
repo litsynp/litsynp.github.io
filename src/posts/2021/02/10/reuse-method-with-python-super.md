@@ -4,7 +4,7 @@ date: 2021-02-10T00:00:00+09:00
 draft: false
 categories: ["tips"]
 tags: ["Django REST Framework", "python"]
-series: ["Django REST Framework 팁"]
+series: ["django-rest-framework"]
 featuredImage: "https://www.django-rest-framework.org/img/logo.png"
 eleventyExcludeFromCollections: ["posts"]
 ---

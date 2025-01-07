@@ -4,7 +4,7 @@ date: 2022-05-06T23:36:45+09:00
 draft: false
 categories: ["problem-solved"]
 tags: ["ps"]
-series: ["코딩테스트", "Java"]
+series: ["problem-solving", "java"]
 featuredImage: "https://wallpapercave.com/wp/wp7250034.jpg"
 eleventyExcludeFromCollections: ["posts"]
 ---

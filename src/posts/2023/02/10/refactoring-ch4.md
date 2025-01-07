@@ -2,7 +2,7 @@
 title: "4장 테스트 구축하기"
 description: 테스트 작성으로 리팩터링 효율을 높일 수 있다
 tags: ["books", "refactoring"]
-series: "리팩터링 2판 (Refactoring: 2nd Ed.)"
+series: "refactoring-2nd"
 date: 2023-02-10T12:14:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

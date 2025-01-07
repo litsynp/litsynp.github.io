@@ -2,7 +2,7 @@
 title: "3장 코드에서 나는 악취"
 description: 냄새 나면 당장 갈아라.
 tags: ["books", "refactoring"]
-series: "리팩터링 2판 (Refactoring: 2nd Ed.)"
+series: "refactoring-2nd"
 date: 2023-02-06T12:01:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

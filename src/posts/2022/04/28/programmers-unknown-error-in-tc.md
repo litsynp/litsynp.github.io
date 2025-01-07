@@ -4,7 +4,7 @@ date: 2022-04-28T15:49:15+09:00
 draft: false
 categories: ["problem-solved"]
 tags: ["ps"]
-series: ["코딩테스트"]
+series: ["problem-solving"]
 featuredImage: "https://file.newswire.co.kr/data/datafile2/thumb_640/2021/06/1993996598_20210610150326_5364622170.jpg"
 eleventyExcludeFromCollections: true
 ---

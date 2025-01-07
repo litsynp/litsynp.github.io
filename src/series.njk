@@ -10,7 +10,7 @@ layout: "base.njk"
   {%- for series in collections.series %}
 
     <li>
-      {{ series.title }}
+      {{ series.names.ko }}
       <ol>
         {%- for post in series.posts %}
           <li>

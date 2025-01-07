@@ -2,7 +2,7 @@
 title: "2장 리팩터링 원칙"
 description: 리팩터링 전반에 적용되는 원칙 몇 가지를 이야기해보자.
 tags: ["books", "refactoring"]
-series: "리팩터링 2판 (Refactoring: 2nd Ed.)"
+series: "refactoring-2nd"
 date: 2023-02-04T02:57:00+09:00
 eleventyExcludeFromCollections: ["posts"]
 ---

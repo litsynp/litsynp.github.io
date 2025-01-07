@@ -1,11 +1,16 @@
+import { readFile } from "fs/promises";
 import { DateTime } from "luxon";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
-const addSeries = (mapping, series, seriesDescription, date, post) => {
+// Import ./src/_data/seriesData.json
+// import seriesData from "./src/_data/seriesData.json";
+
+const seriesData = JSON.parse(await readFile("./src/_data/seriesData.json"));
+
+const addSeries = (mapping, series, date, post) => {
   if (!mapping.has(series)) {
     mapping.set(series, {
       posts: [],
-      description: seriesDescription,
       date,
     });
   }
@@ -88,7 +93,7 @@ export default async function (eleventyConfig) {
     // loop over the posts
     for (const post of posts) {
       // get any series data for the current post, and store the date for later
-      const { series, seriesDescription, date } = post.data;
+      const { series, date } = post.data;
 
       // ignore anything with no series data
       if (series === undefined) {
@@ -98,11 +103,11 @@ export default async function (eleventyConfig) {
       // If the series is an array, we’ll treat each element as a separate series
       if (Array.isArray(series)) {
         for (const s of series) {
-          addSeries(mapping, s, seriesDescription, date, post);
+          addSeries(mapping, s, date, post);
         }
         continue;
       } else {
-        addSeries(mapping, series, seriesDescription, date, post);
+        addSeries(mapping, series, date, post);
       }
     }
 
@@ -111,10 +116,16 @@ export default async function (eleventyConfig) {
     const normalized = [];
 
     // loop over the mapping (`k` is the series title)
-    for (const [k, { posts, description, date }] of mapping.entries()) {
+    for (const [k, { posts, date }] of mapping.entries()) {
       if (posts.length >= 1) {
         // add any series with multiple posts to the new array
-        normalized.push({ title: k, posts, description, date });
+        normalized.push({
+          id: k,
+          names: seriesData?.[k]?.names ?? k,
+          description: seriesData?.[k]?.description,
+          posts,
+          date,
+        });
       }
     }
 

@@ -1,0 +1,65 @@
+{
+  "tir": {
+    "category": null,
+    "names": {
+      "ko": "Today I Read"
+    },
+    "description": null
+  },
+  "java": {
+    "category": null,
+    "names": {
+      "ko": "Java"
+    },
+    "description": null
+  },
+  "spring": {
+    "category": null,
+    "names": {
+      "ko": "Spring 알아보기"
+    },
+    "description": null
+  },
+  "django-rest-framework": {
+    "category": null,
+    "names": {
+      "ko": "Django REST Framework 팁"
+    },
+    "description": null
+  },
+  "problem-solving": {
+    "category": null,
+    "names": {
+      "ko": "코딩테스트"
+    },
+    "description": null
+  },
+  "problem-solving-questions": {
+    "category": null,
+    "names": {
+      "ko": "코딩테스트 문제풀이"
+    },
+    "description": null
+  },
+  "refactoring-2nd": {
+    "category": "book",
+    "names": {
+      "ko": "리팩터링 2판 (Refactoring: 2nd Ed.)"
+    },
+    "description": null
+  },
+  "the-clean-coder": {
+    "category": "book",
+    "names": {
+      "ko": "클린 코더 (The Clean Coder)"
+    },
+    "description": null
+  },
+  "system-design-interview": {
+    "category": null,
+    "names": {
+      "ko": "가상 면접 사례로 배우는 대규모 시스템 설계 기초 (System Design Interview)"
+    },
+    "description": null
+  }
+}

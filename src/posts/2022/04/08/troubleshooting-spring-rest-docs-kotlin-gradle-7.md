@@ -4,7 +4,7 @@ date: 2022-04-08T16:59:02+09:00
 draft: false
 categories: ["problem-solved"]
 tags: ["Spring"]
-series: ["Spring 알아보기"]
+series: ["spring"]
 featuredImage: "https://blog.jetbrains.com/kotlin/files/2020/02/kotlin_blog_gradle_ide.png"
 eleventyExcludeFromCollections: ["posts"]
 ---
