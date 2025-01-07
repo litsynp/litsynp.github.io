@@ -4,7 +4,7 @@ date: 2023-10-10T22:23:30+09:00
 draft: false
 categories: []
 tags: ["electronics"]
-summary: "Flip-flops와 latches에 대해 알아보자."
+description: "Flip-flops와 latches에 대해 알아보자."
 series: ["Today I Read"]
 featuredImage: ""
 toc: true

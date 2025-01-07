@@ -2,7 +2,7 @@
 title: "nvim 입문기"
 date: 2023-10-07T23:23:00+09:00
 draft: false
-summary: nvim에 입문하면서 겪은 모험기를 끄적여본다.
+description: nvim에 입문하면서 겪은 모험기를 끄적여본다.
 tags: ["nvim"]
 toc: true
 ---

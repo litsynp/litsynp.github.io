@@ -4,7 +4,7 @@ date: 2024-07-28T12:41:46+09:00
 draft: false
 categories: []
 tags: ["macos", "korean"]
-summary: "맥북에서 한글 입력 시 알 수 없는 문자가 입력되는 경우를 알아보고 해결 방법이 있는지 알아보자."
+description: "맥북에서 한글 입력 시 알 수 없는 문자가 입력되는 경우를 알아보고 해결 방법이 있는지 알아보자."
 series: []
 featuredImage: "/assets/img/20240728122945.png"
 toc: true

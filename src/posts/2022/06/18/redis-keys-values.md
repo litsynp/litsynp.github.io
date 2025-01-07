@@ -2,7 +2,7 @@
 title: "Redis Keys and Values"
 date: 2022-06-18T15:46:22+09:00
 draft: false
-summary: Some notes about Redis keys and values from Redis docs.
+description: Some notes about Redis keys and values from Redis docs.
 categories: ["today-i-read"]
 tags: ["Redis"]
 series: ["Today I Read"]

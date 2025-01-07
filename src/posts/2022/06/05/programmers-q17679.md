@@ -2,7 +2,7 @@
 title: "[프로그래머스][Level 2][#17679] 프렌즈4블록 해설"
 date: 2022-06-05T02:50:33+09:00
 draft: false
-summary: " "
+description: " "
 categories: ["problem-solving"]
 tags: ["코딩테스트", "프로그래머스", "구현 유형"]
 series: ["코딩테스트 문제풀이"]

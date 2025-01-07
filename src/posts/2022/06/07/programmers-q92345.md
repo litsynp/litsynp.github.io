@@ -2,7 +2,7 @@
 title: "[프로그래머스][level 3][#92345] 사라지는 발판"
 date: 2022-06-07T15:02:49+09:00
 draft: false
-summary: " "
+description: " "
 categories: ["problem-solving"]
 tags: ["코딩테스트", "프로그래머스", "DFS 유형"]
 series: ["코딩테스트 문제풀이"]

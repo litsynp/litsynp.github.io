@@ -2,7 +2,7 @@
 title: "[프로그래머스][Level 2][#17680] 캐시 해설"
 date: 2022-06-05T02:50:50+09:00
 draft: false
-summary: " "
+description: " "
 categories: ["problem-solving"]
 tags: ["코딩테스트", "프로그래머스", "자료구조 유형"]
 series: ["코딩테스트 문제풀이"]

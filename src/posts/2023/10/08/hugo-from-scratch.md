@@ -2,7 +2,7 @@
 title: "Hugo 블로그 만들기"
 date: 2023-10-07T23:23:00+09:00
 draft: false
-summary: Hugo로 블로그를 만들어보자.
+description: Hugo로 블로그를 만들어보자.
 tags: ["hugo", "blog"]
 toc: true
 ---

@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>{{ title }}</h1>
+  <p class="post-description">{{ description }}</p>
   <time class="postlist-date" datetime="{{ date | postDate }}">{{ date | postDate }}</time>
   <hr>
   {{ content | safe }}
