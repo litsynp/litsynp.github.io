@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Real Life Systems :: litsynp.log</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/github.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/gruvbox-dark-hard.css" media="screen and (prefers-color-scheme: dark)">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
+  </head>
+
+  <body>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
+            </nav>
+          </div>
+        </center>
+      </header>
+
+      <main>
+        
+  <h1>Real Life Systems</h1>
+  <p class="post-description">실세계 대규모 시스템 설계 예시</p>
+  <time class="postlist-date" datetime="01/24/2023">01/24/2023</time>
+  <hr>
+  <ul>
+<li>
+<p><a href="http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html">페이스북 타임라인: 비정규화의 힘<br>
+Facebook Timeline: Brought To You By The Power Of Denormalization</a></p>
+</li>
+<li>
+<p><a href="https://www.infoq.com/presentations/Scale-at-Facebook/">페이스북에서의 규모 확장성</a></p>
+<p><a href="https://www.infoq.com/presentations/Scale-at-Facebook/">Scale at Facebook</a></p>
+</li>
+<li>
+<p><a href="https://engineering.fb.com/2012/01/05/web/building-timeline-scaling-up-to-hold-your-life-story/">타임라인: 한 사람의 인생을 담기에 충분한 규모 확장성<br>
+Building Timeline: Scaling up to hold your life story</a></p>
+</li>
+<li>
+<p><a href="https://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf">페이스북에서 Erlang을 사용하는 방법</a></p>
+<p><a href="https://www.erlang-factory.com/upload/presentations/31/EugeneLetuchy-ErlangatFacebook.pdf">Erlang at Facebook (Facebook Chat)</a></p>
+</li>
+<li>
+<p><a href="https://www.facebook.com/notes/10158772733762200/?id=9445547199&amp;index=0">페이스북 채팅<br>
+Facebook Chat</a></p>
+</li>
+<li>
+<p><a href="https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf">건초더미에서 바늘 찾기: 페이스북의 사진 저장소<br>
+Finding a needle in Haystack: Facebook's photo storage</a></p>
+</li>
+<li>
+<p><a href="https://engineering.fb.com/2015/03/10/production-engineering/serving-facebook-multifeed-efficiency-performance-gains-through-redesign/">페이스북 멀티피드</a></p>
+<p><a href="https://engineering.fb.com/2015/03/10/production-engineering/serving-facebook-multifeed-efficiency-performance-gains-through-redesign/">Serving Facebook Multifeed: Efficiency, performance gains through re-design</a></p>
+</li>
+<li>
+<p><a href="https://research.facebook.com/publications/scaling-memcache-at-facebook/">페이스북 멤캐시 시스템의 규모 확장성</a></p>
+<p><a href="https://research.facebook.com/publications/scaling-memcache-at-facebook/">Scaling Memcache at Facebook</a></p>
+</li>
+<li>
+<p><a href="https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf">TAO: 페이스북의 소셜 그래프 분산 저장소</a></p>
+<p><a href="https://cs.uwaterloo.ca/~brecht/courses/854-Emerging-2014/readings/data-store/tao-facebook-distributed-datastore-atc-2013.pdf">TAO: Facebook's Distributed Data Store for the Social Graph</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/amazon-architecture">아마존 아키텍처</a></p>
+<p><a href="http://highscalability.com/amazon-architecture">Amazon Architecture</a></p>
+</li>
+<li>
+<p><a href="https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf">다이나모: 아마존의 고가용성 키-값 저장소</a></p>
+<p><a href="https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/decandia07dynamo.pdf">Dynamo: Amazon's Highly Available Key-value Store</a></p>
+</li>
+<li>
+<p><a href="https://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html">넷플릭스 기술 스택을 모든 각도에서 살펴보기</a></p>
+<p><a href="https://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html">A 360 Degree View Of The Entire Netflix Stack</a></p>
+</li>
+<li>
+<p><a href="https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15">결국 A/B 테스팅 문제: 넷플릭스의 실험 지원 플랫폼</a></p>
+<p><a href="https://netflixtechblog.com/its-all-a-bout-testing-the-netflix-experimentation-platform-4e1ca458c15">It's All A/Bout Testing: The Netflix Experimental Platform</a></p>
+</li>
+<li>
+<p><a href="https://netflixtechblog.com/netflix-recommendations-beyond-the-5-stars-part-1-55838468f429">넷플릭스 추천 시스템 (1부)<br>
+Netflix Recommendations: Beyond the 5 stars (Part 1)</a></p>
+</li>
+<li>
+<p><a href="https://netflixtechblog.com/netflix-recommendations-beyond-the-5-stars-part-2-d9b96aa399f5">넷플릭스 추천 시스템 (2부)<br>
+Netflix Recommendations: Beyond the 5 stars (Part 2)</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/google-architecture">구글 아키텍처<br>
+Google Architecture</a></p>
+</li>
+<li>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en/archive/gfs-sosp2003.pdf">구글 파일 시스템<br>
+The Google File System (Google Docs)</a></p>
+</li>
+<li>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en/pubs/archive/35605.pdf">차이 기반 동기화(델타 동기화)</a></p>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en/pubs/archive/35605.pdf">Differential Synchronization (Google Docs)</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/youtube-architecture">유튜브 아키텍처</a></p>
+<p><a href="http://highscalability.com/youtube-architecture">YouTube Architecture</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ZW5_eEKEC28">유튜브의 규모 확장성<br>
+Seattle Conference on Scalability YouTube Scalability</a></p>
+</li>
+<li>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en/archive/bigtable-osdi06.pdf">빅테이블: 구조화된 데이터를 위한 분산 저장소 시스템</a></p>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en/archive/bigtable-osdi06.pdf">Bigtable: A Distributed Storage System for Structured Data</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html">인스타그램 아키텍처: 천사백만 사용자, 테라바이트 규모의 사진, 수백 대 규모의 서버, 수십 가지 기술<br>
+Instagram Architecture: 14 Million Users, Terabytes Of Photos, 100s Of Instances, Dozens Of Technologies</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html">트위터는 어떻게 150M 활성 사용자를 감당할 시스템을 만들었나</a></p>
+<p><a href="http://highscalability.com/blog/2013/7/8/the-architecture-twitter-uses-to-deal-with-150m-active-users.html">The Architecture Twitter Uses To Deal With 150M Active Users</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster">트위터 규모 확장하기: 트위터를 10000배 빠르게 만든 비결<br>
+Scaling Twitter: Making Twitter 10000 Percent Better</a></p>
+</li>
+<li>
+<p><a href="https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake">스노플레이크</a></p>
+<p><a href="https://blog.twitter.com/engineering/en_us/a/2010/announcing-snowflake">Announcing Snowflake (Snowflake is a network service for generating unique ID numbers at high scale with some simple guarantees)</a></p>
+</li>
+<li>
+<p><a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability/">타임라인과 규모 확장성 문제<br>
+Timelines at Scale</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html">우버는 실시간 마켓 플랫폼의 규모를 어떻게 늘렸나</a></p>
+<p><a href="http://highscalability.com/blog/2015/9/14/how-uber-scales-their-real-time-market-platform.html">How Uber Scales Their Real-Time Market Platform</a></p>
+</li>
+<li>
+<p><a href="https://www.infoq.com/presentations/Pinterest/">핀터레스트의 규모 확장성<br>
+Scaling Pinterest</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/blog/2012/5/21/pinterest-architecture-update-18-million-visitors-10x-growth.html">핀터레스트 아키텍처 업데이트<br>
+Pinterest Architecture Update</a></p>
+</li>
+<li>
+<p><a href="https://engineering.linkedin.com/architecture/brief-history-scaling-linkedin">링크드인이 규모 확장성을 어떻게 성취해 왔는지에 대한 간략한 보고서<br>
+A Brief History of Scaling LinkedIn</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/flickr-architecture">플리커 아키텍처<br>
+Flickr Architecture</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=PE4gwstWhmc">우리는 드롭박스의 규모를 어떻게 확장했나<br>
+How We've Scaled Dropbox</a></p>
+</li>
+<li>
+<p><a href="http://highscalability.com/blog/2014/2/26/the-whatsapp-architecture-facebook-bought-for-19-billion.html">페이스북이 $19B에 사들인 왓츠앱의 아키텍처<br>
+The WhatsApp Architecture Facebook Bought For $19 Billion</a></p>
+</li>
+</ul>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
+  </body>
+</html>

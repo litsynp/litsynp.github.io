@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Key Points :: litsynp.log</title>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/github.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/gruvbox-dark-hard.css" media="screen and (prefers-color-scheme: dark)">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <!-- Highlight.js Copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <script>
+      hljs.highlightAll();
+      hljs.addPlugin(new CopyButtonPlugin());
+    </script>
+
+  </head>
+
+  <body>
+    <div class="wrapper-without-footer">
+      <header class="header">
+        <center>
+          <div class="header-inner-container">
+            <a href="/">litsynp.log</a>
+            <hr>
+            <nav>
+              <a href="/">About</a>
+              <a href="/posts">Posts</a>
+              <a href="/series">Series</a>
+            </nav>
+          </div>
+        </center>
+      </header>
+
+      <main>
+        
+  <h1>Key Points</h1>
+  <p class="post-description">일종의 노트 개념으로 핵심 포인트만 모아봅니다.</p>
+  <time class="postlist-date" datetime="01/23/2023">01/23/2023</time>
+  <hr>
+  <h2>지표</h2>
+<ul>
+<li><strong>규모 확장성</strong> (서버 1대 → N대), <strong>고가용성</strong> (high availability)
+<ul>
+<li>다중화 (replication)</li>
+<li>샤딩 (sharding)
+<ul>
+<li>작업 대상 데이터의 양을 줄일 수 있다</li>
+<li>샤딩 정책 - 데이터를 서버마다 균등하게 배분하는 방법 고안</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>동시성
+<ul>
+<li>이중화/다중화
+<ul>
+<li>무상태 (stateless)하게 유지</li>
+</ul>
+</li>
+<li>동기화
+<ul>
+<li>동기화 충돌
+<ul>
+<li>버저닝</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>일관성
+<ul>
+<li>RDB - ACID 보장</li>
+<li>NoSQL - ACID 기본 지원하지 않음, 프로그래밍 로직으로 대체</li>
+</ul>
+</li>
+<li>응답 속도
+<ul>
+<li>시스템의 응답 속도: ~100ms</li>
+</ul>
+</li>
+</ul>
+<h2>요구사항</h2>
+<p>일간 능동 사용자는? 매일 평균 몇 건의 작업을 수행하는지/평균 소비하는 시간이 얼마인지? 각 작업마다 평균 몇 바이트의 데이터가 필요한지?</p>
+<h3>트래픽 규모</h3>
+<ul>
+<li>일별 능동 사용자 수(<strong>DAU</strong>: Daily Active User)
+<ul>
+<li>5천만(5M)?</li>
+</ul>
+</li>
+<li>인원 제한은 어느 정도로 해야 하는지?</li>
+<li>동시 접속자 수
+<ul>
+<li>동시 접속자 수 x 접속 당 필요한 서버 메모리 = 접속에 필요한 서버 메모리</li>
+</ul>
+</li>
+<li>CDN (Content Delivery Network)
+<ul>
+<li>캐시</li>
+<li>국가/지역별 센터에 배치하여 사용자 근거리로 지정해 응답 지연 개선</li>
+</ul>
+</li>
+</ul>
+<h3>QPS (Query Per Second)</h3>
+<p>초당 몇 번의 질의가 들어오는지를 구한다.</p>
+<p><strong>최대 QPS</strong> ~= QPS * 2</p>
+<h3>데이터 보관 기간</h3>
+<ul>
+<li>내용/길이 제한</li>
+<li>보관 기한 (10년, … 영원히)</li>
+<li>공간 절약 (p.296)
+<ul>
+<li>중복 제거(de-dupe) - 두 블록이 같은 블록인지 해시값으로 판단</li>
+<li>지능적 백업 전략
+<ul>
+<li>한도 설정</li>
+<li>중요한 버전만 보관</li>
+</ul>
+</li>
+<li>아카이빙 저장소(cold storage) - 자주 쓰이지 않는 데이터는 아카이빙 (e.g., AWS S3 Glacier)</li>
+</ul>
+</li>
+</ul>
+<h3>응답 지연 (Latency)</h3>
+<p>몇 ms 안에 처리해야하는지?</p>
+<h3>클라이언트</h3>
+<h4>지원 기기</h4>
+<p>모바일 앱 / 웹(브라우저) / 스마트 TV / …</p>
+<h3>데이터 관련</h3>
+<ul>
+<li>암호화</li>
+<li>데이터 유형
+<ul>
+<li>RDBMS
+<ul>
+<li>일반적인 데이터</li>
+<li>데이터 가운데 롱 테일(long tail)에 해당하는 부분을 잘 처리하지 못함.</li>
+<li>인덱스가 커지면 데이터에 대한 무작위 접근(random access)을 처리하는 비용이 늘어남.
+<ul>
+<li>e.g., 특정 사용자가 언급된 메시지를 보거나, 특정 메시지로 점프(jump)하여 무작위한 데이터 접근을 하는 경우</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NoSQL - 자유로움</li>
+<li>Key-Value Store
+<ul>
+<li>수평적 규모확장(horizontal scaling)이 쉬움</li>
+<li>데이터 접근 지연 시간(latency) 낮음</li>
+<li>많은 안정적인 채팅 시스템이 채택
+<ul>
+<li>Facebook Messenger - HBase</li>
+<li>Discord - Cassandra</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>캐싱 (Caching)</h3>
+<ul>
+<li>캐시 미스(cache miss) (p.238)
+<ul>
+<li>데이터가 캐시에 없는 경우</li>
+<li>캐시 서버의 메모리가 부족할 경우</li>
+<li>캐시 서버에 장애가 있을 경우</li>
+</ul>
+</li>
+<li>브라우저 캐싱(browser caching) (p.239)
+<ul>
+<li>cache-control 응답 헤더 활용</li>
+<li>e.g., 구글 검색 엔진</li>
+</ul>
+</li>
+</ul>
+<h3>추가 논의 / 처리 기법 / 키워드</h3>
+<ul>
+<li>다양한 파일 유형 (확장성)
+<ul>
+<li>원본 저장소(original storage) (p.252)
+<ul>
+<li>대형 이진 파일 저장소(BLOB: Binary Large Object storage) - 이진 데이터를 하나의 개체로 보관하는 데이터베이스 관리 시스템</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>종단간 암호화</li>
+<li>안전성</li>
+<li>성능 개선 (p.267)
+<ul>
+<li>CDN</li>
+<li>병렬화 - 느슨하게 결합된 시스템 만들기 (e.g., 메시지 큐)</li>
+</ul>
+</li>
+<li>오류 처리</li>
+<li>다국어 지원</li>
+<li>스트림 프로세싱
+<ul>
+<li>아파치 하둡 맵리듀스(Apache Hadoop MapReduce)</li>
+<li>아파치 스파크 스트리밍(Apache Spark Streaming)</li>
+<li>아파치 스톰(Apache Storm)</li>
+<li>아파치 카프카(Apache Kafka)</li>
+</ul>
+</li>
+<li>안정 해시</li>
+<li>블룸 필터</li>
+<li>메세지 큐</li>
+<li>오류 처리 (p.272)
+<ul>
+<li>회복 가능 오류(recoverable error) - 몇 번 더 시도(retry)하면 해결된다. 복구 어려우면 오류 코드 반환</li>
+<li>회복 불가능 오류(non-recoverable error) - 중단 후 오류 코드 반환</li>
+</ul>
+</li>
+<li>로드 밸런싱
+<ul>
+<li>로드 밸런서(load balancer): API 서버 각각으로 고르게 요청을 분산하는 역할</li>
+<li>로드밸런서끼리 박동(heart) 신호를 주기적으로 보내서 상태를 모니터링 (p.297)</li>
+</ul>
+</li>
+<li>트라이 (Trie) (p.229)</li>
+<li>데이터 샘플링 (p.239)</li>
+<li>롱테일 (p.271)</li>
+</ul>
+<h3>ID 생성 방식 (Ch.7 - 분산 시스템을 위한 유일 ID 생성기 설계)</h3>
+<ul>
+<li>base64 (요구사항에 따라 base62 등 다양)</li>
+<li>UUID</li>
+<li>스노우플레이크 - 전역적 64-bit 순서 번호(sequence number) 생성기</li>
+<li>지역적 순서 번호 생성기 (local sequence number generator) - ID의 유일성은 같은 그룹(e.g., DB 파티션) 안에서만 보장</li>
+</ul>
+<h3>서비스 탐색 (Service Discovery)</h3>
+<ul>
+<li>기준
+<ul>
+<li>클라이언트의 위치(geographical location)</li>
+<li>서버의 용량(capacity)</li>
+</ul>
+</li>
+<li>솔루션
+<ul>
+<li>아파치 주키퍼(Apache Zookeeper) - 사용 가능한 서버를 등록시켜두면 클라이언트가 접속을 시도하면 사전에 정한 기준에 따라 최적의 서버를 골라준다.</li>
+</ul>
+</li>
+</ul>
+<h2>개념</h2>
+<h3>SPOF (Single Point of Failure)</h3>
+<ul>
+<li>해당 서버가 죽으면 해당하는 전체 서비스가 중단, 최악의 경우 다른 서비스까지 중단</li>
+<li>해결법: 다중화</li>
+<li>서버 1대는 지양해야 함</li>
+</ul>
+<h3>채팅</h3>
+<ul>
+<li>양방향 통신
+<ul>
+<li>폴링(polling)</li>
+<li>롱 폴링(long polling)
+<ul>
+<li>Dropbox</li>
+</ul>
+</li>
+<li>웹소켓(WebSocket)</li>
+</ul>
+</li>
+<li>상태 유지 서비스 (웹소켓)</li>
+<li>접속 상태 관리
+<ul>
+<li>접속 장애
+<ul>
+<li>박동(heartbeat) 검사
+<ul>
+<li>마지막 이벤트를 받은 지 x초 이내에 또 다른 박동 이벤트 메시지를 받으면 접속 상태를 온라인으로 유지, 그렇지 않으면 오프라인</li>
+<li>e.g., 매 5초바다 박동 이벤트를 보내고, 30초 동안 아무런 메시지를 받지 않으면 오프라인으로 변경</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>비디오 스트리밍 (Ch.14)</h3>
+<ul>
+<li>비디오 트랜스코딩 (p.253) - 비디오 인코딩이라고 부르기도 하는 절차로, 비디오의 포맷(MPEG, HLS 등)을 변환하는 절차. 단말이나 대역폭 요구사항에 맞는 최적의 비디오 스트림을 제공하기 위해 필요.</li>
+<li>스트리밍 프로토콜(streaming protocol) (p.256)
+<ul>
+<li>비디오 스트리밍을 위해 데이터를 전송할 때 쓰이는 표준화된 통신 방법</li>
+<li>널리 쓰이는 방식
+<ul>
+<li>MPEG-DASH (Moving Picture Experts Group - Dynamic Adaptive Streaming over HTTP)</li>
+<li>Apple HLS (HTTP Live Streaming)</li>
+<li>Microsoft Smooth Streaming</li>
+<li>Adobe HTTP Dynamic Streaming (HDS)</li>
+</ul>
+</li>
+<li>프로토콜마다 지원하는 비디오 인코딩이 다르고 플레이어도 다르다. 따라서 서비스의 용례에 맞는 프로토콜을 선택해야 한다.</li>
+</ul>
+</li>
+</ul>
+
+
+      </main>
+    </div>
+
+    <footer>
+      <center>
+        <div class="footer-inner-container">
+          <hr>
+          <p>© litsynp.log</p>
+        </div>
+      </center>
+    </footer>
+  </body>
+</html>

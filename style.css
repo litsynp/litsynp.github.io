@@ -71,6 +71,10 @@ h6::before {
   text-transform: uppercase;
 }
 
+.post-description {
+  color: #555;
+}
+
 ul {
   padding-left: 2rem;
 }
@@ -220,6 +224,10 @@ blockquote {
   /* selected link */
   .header a:active {
     color: #e8e8e8;
+  }
+
+  .post-description {
+    color: #aaa;
   }
 
   img {
