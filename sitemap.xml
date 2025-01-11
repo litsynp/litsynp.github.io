@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2021/02/10/reuse-method-with-python-super/</loc>
+      <lastmod>2021-02-09T15:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2021/09/05/getting-ambiguous-exception-handler-method-mapped-for-xxx-exception/</loc>
+      <lastmod>2021-09-04T15:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2021/09/05/unreachable-swagger-ui-on-spring-boot/</loc>
+      <lastmod>2021-09-04T16:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2021/01/05/add-writable-non-model-field-to-drf-serializer/</loc>
+      <lastmod>2022-01-06T07:31:28.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/01/07/redis-kafka-rabbitmq/</loc>
+      <lastmod>2022-01-08T07:38:42.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/01/21/web-xml/</loc>
+      <lastmod>2022-01-22T07:50:40.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/02/11/spring-boot-external-api-call/</loc>
+      <lastmod>2022-02-12T07:30:25.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/02/12/jvm-gc/</loc>
+      <lastmod>2022-02-12T19:28:52.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/04/08/troubleshooting-spring-rest-docs-kotlin-gradle-7/</loc>
+      <lastmod>2022-04-08T07:59:02.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/05/06/cautions-remove-elems-integer-list/</loc>
+      <lastmod>2022-05-06T14:36:45.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/06/04/spring-batch-summary/</loc>
+      <lastmod>2022-06-04T14:55:52.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2022/06/18/redis-keys-values/</loc>
+      <lastmod>2022-06-18T06:46:22.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/01/24/system-design-interview-1-key-points/</loc>
+      <lastmod>2023-01-23T18:23:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/01/24/system-design-interview-2-real-life-systems/</loc>
+      <lastmod>2023-01-24T12:45:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/01/24/system-design-interview-3-engineering-blogs/</loc>
+      <lastmod>2023-01-24T12:45:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/02/03/refactoring-ch1/</loc>
+      <lastmod>2023-02-03T03:31:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/02/04/refactoring-ch2/</loc>
+      <lastmod>2023-02-03T17:57:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/02/06/refactoring-ch3/</loc>
+      <lastmod>2023-02-06T03:01:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/02/10/refactoring-ch4/</loc>
+      <lastmod>2023-02-10T03:14:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/10/07/intro-to-nvim/</loc>
+      <lastmod>2023-10-07T14:23:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/10/08/hugo-from-scratch/</loc>
+      <lastmod>2023-10-07T14:23:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/10/10/flip-flops-and-latches/</loc>
+      <lastmod>2023-10-10T13:23:30.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2023/10/27/go-migration-script/</loc>
+      <lastmod>2023-10-27T12:27:53.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/2024/07/28/weird-chars-on-macos/</loc>
+      <lastmod>2024-07-28T03:41:46.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/</loc>
+      <lastmod>2025-01-11T10:27:49.401Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/posts/</loc>
+      <lastmod>2025-01-11T10:27:49.401Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/series/</loc>
+      <lastmod>2025-01-11T10:27:49.406Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://blog.litsynp.com/static/googlef00990153f3bbc46/</loc>
+      <lastmod>2025-01-11T10:27:49.406Z</lastmod>
+    </url>
+  
+</urlset>
