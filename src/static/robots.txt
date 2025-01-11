@@ -1,0 +1,4 @@
+Sitemap: https://blog.litsynp.com/sitemap.xml
+
+User-agent: *
+Disallow:
